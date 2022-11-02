@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3a9f36c8-cb73-4dac-9098-1c158688f90d" name="Changes" comment="Initial commit and push">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/browsers.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/invalidLoginTests/fakeUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/invalidLoginTests/invalidLogin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/invalidLoginTests/signInHelpButtons.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/originalFlows/flowANewClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/originalFlows/flowBPasswordLinks.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/originalFlows/flowCMyPreferences.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/originalFlows/flowDSigninAndOut.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/pages/basePage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/pages/clientPlatformPages.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/pages/projectsPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/pages/signInPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/validLoginTests/pageTests/projectsTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/validLoginTests/validLoginTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/pages/basePage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/pages/dashboardPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/pages/projectCreationPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/tests/whiteboardAndProjectsTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/general/googleAuth.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/pistachio/pages/basePage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/pistachio/pages/clientAccountsPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/pistachio/pages/clientContactsPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/pistachio/pages/clientEntitiesPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/pistachio/pages/clientGlobalPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/pistachio/pages/internalTabNavs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/pistachio/pages/pistachioPages.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/pistachio/tests/loginTests/loginTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectId" id="2GMY4dNPBCKwijWTGlE6hS5vvXk" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/user/Documents/GitHub/as_UIAutomation_QA/resources",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "page.object.configurable"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/originalFlows" />
+      <recent name="$PROJECT_DIR$/src/test/java/alphasights/apps" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="alphasights.apps.pistachio.validLoginTests" />
+      <recent name="alphasights.apps.clientPlatform.pages" />
+      <recent name="alphasights.apps.clientPlatform" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="alphasights.apps.pistachio.pages" />
+    </key>
+  </component>
+  <component name="RunManager" selected="TestNG.whiteboardAndProjectsTests.createProjectStandard">
+    <configuration name="flowANewClient" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="as_UIAutomation_QA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="alphasights.apps.clientPlatform.originalFlows.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="alphasights.apps.clientPlatform.originalFlows" />
+      <option name="MAIN_CLASS_NAME" value="alphasights.apps.clientPlatform.originalFlows.flowANewClient" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="flowANewClient.automationClientAccountSetup" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="as_UIAutomation_QA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="alphasights.apps.clientPlatform.originalFlows.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="alphasights.apps.clientPlatform.originalFlows" />
+      <option name="MAIN_CLASS_NAME" value="alphasights.apps.clientPlatform.originalFlows.flowANewClient" />
+      <option name="METHOD_NAME" value="automationClientAccountSetup" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="flowANewClient.createClientContact_PTO" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="as_UIAutomation_QA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="alphasights.apps.clientPlatform.originalFlows.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="alphasights.apps.clientPlatform.originalFlows" />
+      <option name="MAIN_CLASS_NAME" value="alphasights.apps.clientPlatform.originalFlows.flowANewClient" />
+      <option name="METHOD_NAME" value="createClientContact_PTO" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="whiteboardAndProjectsTests" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="as_UIAutomation_QA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="alphasights.apps.delivery.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="alphasights.apps.delivery.tests" />
+      <option name="MAIN_CLASS_NAME" value="alphasights.apps.delivery.tests.whiteboardAndProjectsTests" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="whiteboardAndProjectsTests.createProjectStandard" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="as_UIAutomation_QA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="alphasights.apps.delivery.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="alphasights.apps.delivery.tests" />
+      <option name="MAIN_CLASS_NAME" value="alphasights.apps.delivery.tests.whiteboardAndProjectsTests" />
+      <option name="METHOD_NAME" value="createProjectStandard" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="TestNG.whiteboardAndProjectsTests.createProjectStandard" />
+        <item itemvalue="TestNG.whiteboardAndProjectsTests" />
+        <item itemvalue="TestNG.flowANewClient" />
+        <item itemvalue="TestNG.flowANewClient.createClientContact_PTO" />
+        <item itemvalue="TestNG.flowANewClient.automationClientAccountSetup" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SeleniumInternalSettingsState">
+    <option name="lastFrameworkName" value="Selenide" />
+    <option name="lastLanguageId" value="JAVA" />
+    <option name="lastUrl" value="https://qa-pistachio.alphasights.com/client/accounts" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3a9f36c8-cb73-4dac-9098-1c158688f90d" name="Changes" comment="" />
+      <created>1666199735099</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1666199735099</updated>
+      <workItem from="1666199738962" duration="21501000" />
+      <workItem from="1666287340969" duration="21554000" />
+      <workItem from="1666383022516" duration="681000" />
+      <workItem from="1666383777036" duration="30947000" />
+      <workItem from="1666644791911" duration="2502000" />
+      <workItem from="1666701303423" duration="2060000" />
+      <workItem from="1666703593599" duration="22723000" />
+      <workItem from="1666787873956" duration="120819000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial commit and push" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial commit and push" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
