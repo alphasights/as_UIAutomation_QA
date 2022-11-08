@@ -2,12 +2,13 @@ package alphasights.apps.pistachio.pages;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.SelenideWait;
 import org.openqa.selenium.By;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
-
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -26,7 +27,7 @@ public class clientAccountsPage extends basePage{
     Object obj = jsonParser.parse(new FileReader(accountDetails));
     JSONObject jsonObject = (JSONObject)obj;
 
-    String accountName = (String)jsonObject.get("accountName");
+    String accountName = (String) jsonObject.get("accountName");
     String supervisors = (String)jsonObject.get("supervisors");
     String entity = (String)jsonObject.get("entity");
     String businessUnit = (String)jsonObject.get("businessUnit");

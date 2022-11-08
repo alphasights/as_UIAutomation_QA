@@ -5,46 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3a9f36c8-cb73-4dac-9098-1c158688f90d" name="Changes" comment="Initial commit and push">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/browsers.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/invalidLoginTests/fakeUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/invalidLoginTests/invalidLogin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/invalidLoginTests/signInHelpButtons.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/originalFlows/flowANewClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/originalFlows/flowBPasswordLinks.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/originalFlows/flowCMyPreferences.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/originalFlows/flowDSigninAndOut.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/pages/basePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/pages/clientPlatformPages.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/pages/projectsPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/pages/signInPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/validLoginTests/pageTests/projectsTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/validLoginTests/validLoginTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/pages/basePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/pages/dashboardPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/pages/projectCreationPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/tests/whiteboardAndProjectsTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/general/googleAuth.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/pistachio/pages/basePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/pistachio/pages/clientAccountsPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/pistachio/pages/clientContactsPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/pistachio/pages/clientEntitiesPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/pistachio/pages/clientGlobalPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/pistachio/pages/internalTabNavs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/pistachio/pages/pistachioPages.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/pistachio/tests/loginTests/loginTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/pages/NPSOptions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/utilities/Environments.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/invalidLoginTests/fakeUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/invalidLoginTests/fakeUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/invalidLoginTests/invalidLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/invalidLoginTests/invalidLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/invalidLoginTests/signInHelpButtons.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/invalidLoginTests/signInHelpButtons.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/validLoginTests/validLoginTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/validLoginTests/validLoginTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/pages/projectCreationPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/pages/projectCreationPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/tests/whiteboardAndProjectsTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/tests/whiteboardAndProjectsTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/general/googleAuth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/utilities/googleAuth.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/pistachio/pages/clientAccountsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/pistachio/pages/clientAccountsPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/pistachio/tests/loginTests/loginTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/pistachio/tests/loginTests/loginTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,13 +28,38 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="REMOTE">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="origin/master" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubProjectSettings">
+    <option name="branchProtectionPatterns">
+      <list>
+        <option value="master" />
+      </list>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -80,6 +79,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "ToolWindowBuild.ShowToolbar": "false",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "/Users/user/Documents/GitHub/as_UIAutomation_QA/resources",
     "node.js.detected.package.eslint": "true",
@@ -227,8 +227,18 @@
       <workItem from="1666644791911" duration="2502000" />
       <workItem from="1666701303423" duration="2060000" />
       <workItem from="1666703593599" duration="22723000" />
-      <workItem from="1666787873956" duration="120819000" />
+      <workItem from="1666787873956" duration="126444000" />
+      <workItem from="1667420384913" duration="33176000" />
+      <workItem from="1667917243751" duration="5558000" />
     </task>
+    <task id="LOCAL-00001" summary="Initial commit and push">
+      <created>1667401323964</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1667401323964</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -243,6 +253,17 @@
               <option name="CUSTOM_BOOLEAN_PROPERTIES">
                 <map>
                   <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/drussell_updates" />
+                      </list>
+                    </value>
+                  </entry>
                 </map>
               </option>
             </State>

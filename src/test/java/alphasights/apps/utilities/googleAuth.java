@@ -1,4 +1,4 @@
-package alphasights.apps.general;
+package alphasights.apps.utilities;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
@@ -11,7 +11,7 @@ import org.json.simple.parser.ParseException;
 import org.openqa.selenium.By;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeGroups;
-import org.testng.annotations.BeforeSuite;
+
 import java.io.*;
 import java.net.*;
 
@@ -55,7 +55,7 @@ public class googleAuth {
     public void setUpPistachio() throws InterruptedException {
         SelenideLogger.addListener("allure", new AllureSelenide());
         open(pistachioUrl);
-        Configuration.browserSize = "1080 x 1920";
+        Configuration.browserSize = "1080x1920";
         $(googleUserNameInput).shouldBe(editable);
         googleUserNameInput.sendKeys(googleUserName);
         $(googleNextBtn).shouldBe(editable);
@@ -102,7 +102,7 @@ public class googleAuth {
     @AfterSuite
     public void endSession()
     {
-        if(!Selenide.sessionId().equals(null)){
+        if(Selenide.sessionId() != null){
             Selenide.clearBrowserCookies();
             Selenide.closeWebDriver();
         }
