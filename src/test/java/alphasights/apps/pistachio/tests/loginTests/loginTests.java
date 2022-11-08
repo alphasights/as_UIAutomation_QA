@@ -1,7 +1,7 @@
 package alphasights.apps.pistachio.tests.loginTests;
 
 import alphasights.apps.delivery.pages.dashboardPage;
-import alphasights.apps.general.googleAuth;
+import alphasights.apps.utilities.googleAuth;
 import org.json.simple.parser.ParseException;
 import org.testng.annotations.BeforeGroups;
 

@@ -2,7 +2,7 @@ package alphasights.apps.clientPlatform.invalidLoginTests;
 
 import alphasights.apps.clientPlatform.pages.basePage;
 import alphasights.apps.clientPlatform.pages.signInPage;
-import alphasights.apps.general.googleAuth;
+import alphasights.apps.utilities.googleAuth;
 import org.json.simple.parser.ParseException;
 import org.testng.annotations.*;
 
