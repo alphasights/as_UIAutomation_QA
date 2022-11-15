@@ -1,6 +1,6 @@
 package alphasights.apps.utilities;
 
-public enum Environments {
+public enum alphasightsEnvironments {
     QA_PISTACHIO,
     QA_DELIVERY,
     QA_CLIENT_PLATFORM,

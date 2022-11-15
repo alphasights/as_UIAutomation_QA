@@ -1,8 +1,6 @@
 package alphasights.apps.delivery.pages;
 
-import com.codeborne.selenide.ClickOptions;
-import com.codeborne.selenide.ElementsCollection;
-import com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.*;
 import com.github.javafaker.service.FakeValuesService;
 import com.github.javafaker.service.RandomService;
 import org.json.simple.JSONObject;
@@ -20,7 +18,7 @@ import java.util.Collection;
 import java.util.Locale;
 
 import static alphasights.apps.delivery.pages.NPSOptions.ON_COMPLETION;
-import static com.codeborne.selenide.Condition.editable;
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 import static org.openqa.selenium.Keys.*;
 
@@ -32,9 +30,9 @@ public class projectCreationPage extends basePage {
     JSONObject jsonObject = (JSONObject)obj;
     public String clientInstructions = (String)jsonObject.get("clientInstructions");
     public String clientEntity = (String)jsonObject.get("clientEntity");
-    public String category = (String)jsonObject.get("category");
+    public String clientCategory = (String)jsonObject.get("clientCategory");
     public String clientContact = (String)jsonObject.get("clientContact");
-    public String account = (String)jsonObject.get("account");
+    public String clientAccount = (String)jsonObject.get("clientAccount");
     Faker faker = new Faker();
 
     String externalTitleVal = faker.rickAndMorty().character() + "Company";
@@ -52,17 +50,18 @@ public class projectCreationPage extends basePage {
     public SelenideElement clientInstructionsTextArea = $x("//textarea[contains (@placeholder, 'Overall project scope. For example, workforce management solutions or')]");
     public SelenideElement internalDeliveryGuidelinesTextArea = $x("//textarea[text()='Internal project notes, for example Update the client every day at 6']");
     public SelenideElement clientEntitySelector = $x("//span[text()='Select Entity']");
-    public SelenideElement clientEntityInput = $("input.ember-power-select-search-input");
+    public ElementsCollection emberInput = $$("input.ember-power-select-search-input");
+    public SelenideElement emberDropdown = $("div.ember-basic-dropdown-content.ember-power-select-dropdown.ember-basic-dropdown-content--in-place.ember-basic-dropdown-content--left.ember-basic-dropdown-content--below.ember-basic-dropdown--transitioned-in.ember-view");
     public SelenideElement lastClientEntitySelectOption = $("li.ember-power-select-option:last-child");
-    public SelenideElement firstClientEntitySelectionOption = $("li.ember-power-select-option:first-child");
+    public SelenideElement firstEmberSelectionOption = $("li.ember-power-select-option:first-child");
+    public SelenideElement selectedClientEntity = $("div.x-form-field.x-form-field--select.x-form-field--client-entity.x-form-field--required.ember-view > div.ember-view > span.aui.x-form-field__element--select.ember-view > div.ember-basic-dropdown.ember-view  > div.ember-power-select-trigger.x-form-field__element.ember-basic-dropdown-trigger.ember-basic-dropdown-trigger--in-place.ember-view > span.ember-power-select-selected-item");
 
-    public SelenideElement categorySelector = $("div.ember-power-select-trigger.x-form-field__element.ember-basic-dropdown-trigger.ember-basic-dropdown-trigger--in-place.ember-view");
-    public SelenideElement categoryInput = $("input.ember-power-select-search-input");
-    public SelenideElement categorySelectOption = $("li.ember-power-select-option");
-    public SelenideElement clientContactSelector = $("div.ember-power-select-trigger.x-form-field__element.ember-basic-dropdown-trigger.ember-basic-dropdown-trigger--in-place.ember-basic-dropdown-trigger--left.ember-basic-dropdown-trigger--below.ember-view");
-    public SelenideElement clientContactInput = $("div.ember-power-select-search");
-    public SelenideElement clientContactSelectOption = $("li.ember-power-select-option");
-    public SelenideElement clientAccountSelector = $("div.ember-view > span.aui.x-form-field__element--select.aui-border-error-2.ember-view");
+    public SelenideElement clientCategorySelector = $("div.project-form-group__column.x-form-field.x-form-field--select.x-form-field--category.x-form-field--required.ember-view > div.ember-view > span.aui.x-form-field__element--select.ember-view > div.ember-basic-dropdown.ember-view > div.ember-power-select-trigger.x-form-field__element.ember-basic-dropdown-trigger.ember-basic-dropdown-trigger--in-place.ember-view");
+    public SelenideElement selectedClientCategory = $("div.project-form-group__column.x-form-field.x-form-field--select.x-form-field--category.x-form-field--required.ember-view > div.ember-view > span.aui.x-form-field__element--select.ember-view > div.ember-basic-dropdown.ember-view > div.ember-power-select-trigger.x-form-field__element.ember-basic-dropdown-trigger.ember-basic-dropdown-trigger--in-place.ember-view > span.ember-power-select-selected-item");
+    public SelenideElement clientContactSelector = $x("//span[text()='Select Client Contact']");
+    public SelenideElement selectedClientContact = $("div.ember-view.tooltipstered > div.ember-view > span.aui.x-form-field__element--select.ember-view > div.ember-basic-dropdown.ember-view > div.ember-power-select-trigger.x-form-field__element.ember-basic-dropdown-trigger.ember-basic-dropdown-trigger--in-place.ember-view > span.ember-power-select-selected-item");
+    public SelenideElement clientAccountSelector = $("div.x-form-field.x-form-field--select.x-form-field--client-account.x-form-field--required.ember-view > div.ember-view > span.aui.x-form-field__element--select.ember-view > div.ember-basic-dropdown.ember-view > div.ember-power-select-trigger.x-form-field__element.ember-basic-dropdown-trigger.ember-basic-dropdown-trigger--in-place.ember-view");
+    public SelenideElement selectedClientAccount = $("div.x-form-field.x-form-field--select.x-form-field--client-account.x-form-field--required.ember-view > div.ember-view > span.aui.x-form-field__element--select.ember-view > div.ember-basic-dropdown.ember-view > div.ember-power-select-trigger.x-form-field__element.ember-basic-dropdown-trigger.ember-basic-dropdown-trigger--in-place.ember-view > span.ember-power-select-selected-item");
     public SelenideElement clientAccountInput = $("div.ember-power-select-search");
     public SelenideElement lastClientAccountSelectOption = $("li.ember-power-select-option:last-child");
     public SelenideElement allNPSoptions = $("project-form-group__row.project-form-group__row--middle");
@@ -120,7 +119,8 @@ public class projectCreationPage extends basePage {
         projectOverviewForm.click();
         enterClientInstructions();
         enterClientEntity();
-        enterCategory();
+        pressTab(2);
+        enterClientCategory();
         enterClientContact();
         enterAccount();
         selectNPS(NPSOption);
@@ -141,20 +141,17 @@ public class projectCreationPage extends basePage {
     {
         $(clientEntitySelector).shouldBe(editable);
         clientEntitySelector.click();
-        $(clientEntityInput).shouldBe(editable);
-        clientEntityInput.click();
-        clientEntityInput.sendKeys(clientEntity + ENTER);
+        selectFirstOptionEmberDropdown(clientEntity);
+        $(selectedClientEntity).shouldHave(partialText(clientEntity));
         return this;
     }
 
-    public projectCreationPage enterCategory()
+    public projectCreationPage enterClientCategory()
     {
-        $(categorySelector).shouldBe(editable);
-        categorySelector.click();
-        $(categoryInput).shouldBe(editable);
-        categoryInput.sendKeys(category);
-        $(categorySelectOption).shouldBe(editable);
-        categorySelectOption.click();
+        $(clientCategorySelector).shouldBe(editable);
+        clientCategorySelector.click();
+        selectFirstOptionEmberDropdown(clientCategory);
+        $(selectedClientCategory).shouldHave(partialText(clientCategory));
         return this;
     }
 
@@ -162,21 +159,18 @@ public class projectCreationPage extends basePage {
     {
         $(clientContactSelector).shouldBe(editable);
         clientContactSelector.click();
-        $(clientContactInput).shouldBe(editable);
-        clientContactInput.sendKeys(clientContact);
-        $(clientContactSelectOption).shouldBe(editable);
-        ElementsCollection clientContactOption = $$("li.ember-power-select-option");
-        clientContactOption.first().click();
+        selectFirstOptionEmberDropdown(clientContact);
+        $(selectedClientContact).shouldHave(partialText(clientContact));
         return this;
     }
 
     public projectCreationPage enterAccount()
     {
+        //Client Account is pre-populated, but we are editing it
         $(clientAccountSelector).shouldBe(editable);
         clientAccountSelector.click();
-        $(clientAccountInput).shouldBe(editable);
-        clientAccountInput.sendKeys(account);
-        $(lastClientAccountSelectOption).shouldBe(editable);
+        selectFirstOptionEmberDropdown(clientAccount);
+        $(selectedClientAccount).shouldHave(partialText(clientAccount));
 
         return this;
     }
@@ -225,6 +219,35 @@ public class projectCreationPage extends basePage {
     {
         $(codeNameInput).shouldBe(editable);
         codeNameInput.sendKeys(codeNameVal);
+        return this;
+    }
+    
+    public projectCreationPage selectFirstOptionEmberDropdown(String inputVal)
+    {
+        $(emberInput.last()).shouldBe(editable);
+        emberInput.get(0).click();
+        emberInput.get(0).clear();
+        emberInput.get(0).sendKeys(inputVal);
+        $(emberDropdown).should(editable, Duration.ofSeconds(5));
+        if (inputVal == clientEntity) {
+            $(firstEmberSelectionOption).shouldNotBe(partialText("Searching for Entities..."), Duration.ofSeconds(5));
+        }
+        if (inputVal == clientContact) {
+            $(firstEmberSelectionOption).shouldNotBe(partialText("Searching for contacts..."), Duration.ofSeconds(5));
+        }
+        firstEmberSelectionOption.click();
+        return this;
+    }
+
+    public projectCreationPage pressTab(int numberOfTimes)
+    {
+        int i = 0;
+
+        while(i > numberOfTimes)
+        {
+            actions().sendKeys(TAB);
+            i++;
+        }
         return this;
     }
 
