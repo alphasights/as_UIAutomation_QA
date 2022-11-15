@@ -16,12 +16,14 @@ import java.io.*;
 import java.net.*;
 
 
+import static alphasights.apps.utilities.alphasightsEnvironments.*;
 import static com.codeborne.selenide.Condition.editable;
 import static com.codeborne.selenide.Selenide.*;
 
 public class googleAuth {
 
     //region Variables
+    public URL testingURL;
     //region Setup google userDetails
 
     //region Username
@@ -41,20 +43,75 @@ public class googleAuth {
     //endregion
     //endregion
 
-    public URL clientPlatformUrl = new URL("https://qa-portal-staging.alphasights.com/sign-in");
-    public URL pistachioUrl = new URL("https://qa-pistachio.alphasights.com/");
-    public URL deliveryUrl = new URL("https://qa-delivery.alphasights.com/");
+    //region Environment URLs
+    //region QA
+    public URL qaPistachioURL = new URL("https://qa-pistachio.alphasights.com/");
+    public URL qaDeliveryUrl = new URL("https://qa-delivery.alphasights.com/");
+    public URL qaClientPlatformUrl = new URL("https://qa-portal-staging.alphasights.com/sign-in");
+
+    //endregion
+
+    //region Staging
+    public URL stagingPistachioUrl = new URL("https://eng-playground.alphasights.com/client/accounts");
+    public URL stagingDeliveryUrl = new URL("https://delivery-eng-playground.alphasights.com/dashboard");
+    public URL stagingClientPlatformUrl = new URL("https://portal-staging.alphasights.com/sign-in");
+    //endregion
+
+    //region Production
+    public URL prodPistachioURL = new URL("https://secure.alphasights.com/projects");
+    public URL prodDeliveryURL = new URL("https://delivery.alphasights.com/dashboard");
+    public URL prodClientPlatformURL = new URL("https://portal.alphasights.com/sign-in");
+    //endregion
+
+
+    //endregion
 
     //region Locators
     public SelenideElement googleUserNameInput = $(By.id("identifierId"));
     public SelenideElement googleNextBtn = $x("//span[text()='Next']");
     public SelenideElement googlePasswordInput = $(By.name("password"));
 
+    
+    public googleAuth environmentSelector(alphasightsEnvironments asEnvironement)
+    {
+        switch(asEnvironement)
+        {
+            case QA_PISTACHIO:
+                testingURL = qaPistachioURL;
+                break;
+            case QA_DELIVERY:
+                testingURL = qaDeliveryUrl;
+                break;
+            case QA_CLIENT_PLATFORM:
+                testingURL = qaClientPlatformUrl;
+                break;
+            case STAGING_PISTACHIO:
+                testingURL = stagingPistachioUrl;
+                break;
+            case STAGING_DELIVERY:
+                testingURL = stagingDeliveryUrl;
+                break;
+            case STAGING_CLIENT_PLATFORM:
+                testingURL = stagingClientPlatformUrl;
+                break;
+            case PROD_PISTACHIO:
+                testingURL = prodPistachioURL;
+                break;
+            case PROD_DELIVERY:
+                testingURL = prodDeliveryURL;
+                break;
+            case PROD_CLIENT_PLATFORM:
+                testingURL = prodClientPlatformURL;
+                break;
+        }
+        return this;
+    }
 
     @BeforeGroups(groups = {"Pistachio"})
-    public void setUpPistachio() throws InterruptedException {
+    public void setUpQAPistachio() throws InterruptedException {
         SelenideLogger.addListener("allure", new AllureSelenide());
-        open(pistachioUrl);
+        environmentSelector(QA_PISTACHIO);
+        open(testingURL);
         Configuration.browserSize = "1080x1920";
         $(googleUserNameInput).shouldBe(editable);
         googleUserNameInput.sendKeys(googleUserName);
@@ -67,11 +124,13 @@ public class googleAuth {
         googleNextBtn.click();
     }
 
+
     @BeforeGroups(groups = {"Client Platform"})
     public void setUpClientPlatform() throws InterruptedException {
         SelenideLogger.addListener("allure", new AllureSelenide());
-        open(clientPlatformUrl);
-        Configuration.browserSize = "1080 x 1920";
+        environmentSelector(QA_CLIENT_PLATFORM);
+        open(testingURL);
+        Configuration.browserSize = "1080x1920";
         $(googleUserNameInput).shouldBe(editable);
         googleUserNameInput.sendKeys(googleUserName);
         $(googleNextBtn).shouldBe(editable);
@@ -86,7 +145,8 @@ public class googleAuth {
     @BeforeGroups(groups = {"Delivery"})
     public void setUpDelivery() throws InterruptedException {
         SelenideLogger.addListener("allure", new AllureSelenide());
-        open(deliveryUrl);
+        environmentSelector(QA_DELIVERY);
+        open(testingURL);
         Configuration.browserSize = "1080 x 1920";
         $(googleUserNameInput).shouldBe(editable);
         googleUserNameInput.sendKeys(googleUserName);
