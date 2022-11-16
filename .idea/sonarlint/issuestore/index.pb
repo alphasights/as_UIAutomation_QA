@@ -36,8 +36,6 @@ u
 Esrc/test/java/alphasights/apps/clientPlatform/pages/projectsPage.java,1/5/154049ad02327298f8d8e5746ec4285c54f4f521
 Š
 Zsrc/test/java/alphasights/apps/clientPlatform/validLoginTests/pageTests/projectsTests.java,b/2/b25fee3a1ecdc7a83d4c9bf6e3b5a07038288c6b
-s
-Csrc/test/java/alphasights/apps/clientPlatform/pages/signInPage.java,3/a/3a72772b4bb3fbbf52f91484bbe5dc74a68a95a7
 l
 <src/test/java/alphasights/apps/pistachio/pages/basePage.java,d/c/dc5bb7dcf633d0fcbff82a00c02e987851b306a9
 v
@@ -52,3 +50,9 @@ y
 Isrc/test/java/alphasights/apps/pistachio/tests/loginTests/loginTests.java,1/a/1af808f3358fdb7389109eb0d7c85651f16fc51e
 †
 Vsrc/test/java/alphasights/apps/clientPlatform/invalidLoginTests/signInHelpButtons.java,f/3/f3782493388f344e409b4388af0d65657eeb957d
+u
+Esrc/test/java/alphasights/apps/utilities/alphasightsEnvironments.java,e/0/e0504f5896d47b8acf3455fcb47769134e0b299b
+p
+@src/test/java/alphasights/apps/delivery/pages/dashboardPage.java,0/0/00a3cb23af8acf9afd4e2a8badcf5158db27e6be
+}
+Msrc/test/java/alphasights/apps/clientPlatform/invalidLoginTests/fakeUser.java,2/6/262623909aa4ade711a467757604d5eac37b0d3e

@@ -7,39 +7,43 @@
                 <class name="alphasights.apps.clientPlatform.invalidLoginTests.invalidLogin" />
             </classes>
     </test>
-    <test name="Invalid email input - no domain">
+    <test name="Client Platform - Invalid email input - no domain">
         <parameter name="username" value="abc@def"/>
         <classes>
             <class name="alphasights.apps.clientPlatform.invalidLoginTests.invalidLogin" />
         </classes>
     </test>
-    <test name="Invalid email input - no at">
+    <test name="Client Platform - Invalid email input - no at">
         <parameter name="username" value="abc.com"/>
         <classes>
             <class name="alphasights.apps.clientPlatform.invalidLoginTests.invalidLogin" />
         </classes>
     </test>
-    <test name="Invalid email input - single letter domain">
+    <test name="Client Platform - Invalid email input - single letter domain">
         <parameter name="username" value="abc@def.g"/>
         <classes>
             <class name="alphasights.apps.clientPlatform.invalidLoginTests.invalidLogin" />
         </classes>
     </test>
-    <test name="Fake User Test Suite">
+    <test name="Client Platform - Fake User Test Suite">
         <classes>
             <class name="alphasights.apps.clientPlatform.invalidLoginTests.fakeUser"/>
         </classes>
     </test>
-    <test name ="Sign In Help Button Test Suite">
+    <test name ="Client Platform - Sign In Help Button Test Suite">
         <classes>
             <class name="alphasights.apps.clientPlatform.invalidLoginTests.signInHelpButtons"/>
         </classes>
     </test>
-    <test name = "Standard Login Test Suite">
+    <test name = "Client Platform - Standard Login Test Suite">
         <packages>
             <package name="alphasights.apps.clientPlatform.validLoginTests" />
             <package name="alphasights.apps.clientPlatform.originalFlows"/>
-
         </packages>
+    </test>
+    <test name = "Delivery - Whiteboard And Projects Tests">
+        <classes>
+            <class name="alphasights.apps.delivery.tests.whiteboardAndProjectsTests"></class>
+        </classes>
     </test>
 </suite>

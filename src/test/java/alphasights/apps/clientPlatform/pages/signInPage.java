@@ -53,7 +53,6 @@ public class signInPage {
     //region Actions
     public signInPage enterUserName(String email)
     {
-        timeout = 10000;
         $(emailInput).shouldBe(editable);
         emailInput.sendKeys(email);
         $(nextBtn).shouldBe(editable);
@@ -71,7 +70,6 @@ public class signInPage {
 
     public signInPage clearUsername()
     {
-        timeout = 10000;
         $(emailInput).shouldBe(editable);
         emailInput.sendKeys(COMMAND + "A");
         emailInput.sendKeys(BACK_SPACE);
@@ -95,14 +93,12 @@ public class signInPage {
     }
     public signInPage clickContactSupportLink()
     {
-        timeout = 10000;
         $(contactSupportLink).shouldBe(editable);
         contactSupportLink.click();
         return this;
     }
 
     public signInPage clickForgotPassword(){
-        timeout = 10000;
         $(forgotPassword).shouldBe(visible);
         forgotPassword.click();
         return this;
@@ -115,7 +111,6 @@ public class signInPage {
     }
 
     public signInPage clickReturnToSignIn(){
-        timeout = 10000;
         $(returnToSignIn).shouldBe(editable);
         returnToSignIn.click();
         return this;
@@ -150,7 +145,6 @@ public class signInPage {
 
     public signInPage verifyLoginStandard() throws InterruptedException {
 
-        timeout = 10000;
         $(BasePage.projectsLink).shouldBe(editable);
         $(ProjectsPage.lastProject).shouldBe(visible);
         System.out.println(WebDriverRunner.url());
@@ -159,7 +153,6 @@ public class signInPage {
 
     public signInPage verifyInvalidEmailNotice()
     {
-        timeout = 10000;
         emailInput.sendKeys(TAB);
         $(usernameInvalidEmailNotice).shouldBe(visible);
         return this;
@@ -167,7 +160,6 @@ public class signInPage {
 
     public signInPage verifyLoginFailedForUser()
     {
-        timeout = 10000;
         $(signinBtn).shouldBe(disabled);
         invalidLoginNotice.shouldBe(visible);
         return this;
