@@ -4,14 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3a9f36c8-cb73-4dac-9098-1c158688f90d" name="Changes" comment="Added Enum for Environment handling.  Added Enum for NPSOptions to use with Project Creation scripts.  Added Java Faker dependency to populate fake data.">
+    <list default="true" id="3a9f36c8-cb73-4dac-9098-1c158688f90d" name="Changes" comment="renamed utility Environments.java to alphasightsEnvironments.java to prevent confusion with other classes.  Made changes to the dashboardPage object.  Improved the googleAuth utility to have simple environment handling (Staging, Prod etc.).  Added a lot to the projectCreationPage page object.  Started creating test for Project Creation v-1 in whiteboardAndProjectsTests.">
+      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/pages/ExternalDescriptions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/pages/projectDetailsPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/pages/dashboardPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/pages/dashboardPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/originalFlows/flowANewClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/originalFlows/flowANewClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/pages/signInPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/pages/signInPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/pages/projectCreationPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/pages/projectCreationPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/tests/whiteboardAndProjectsTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/tests/whiteboardAndProjectsTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/utilities/Environments.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/utilities/alphasightsEnvironments.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/utilities/googleAuth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/utilities/googleAuth.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +24,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -66,27 +69,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "ToolWindowBuild.ShowToolbar": "false",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/user/Documents/GitHub/as_UIAutomation_QA/resources",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2735632",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "page.object.configurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;ToolWindowBuild.ShowToolbar&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/user/Documents/GitHub/as_UIAutomation_QA/resources&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2735632&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;page.object.configurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/resources" />
@@ -104,7 +107,7 @@
       <recent name="alphasights.apps.pistachio.pages" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.whiteboardAndProjectsTests.createProjectStandard (1)">
+  <component name="RunManager" selected="TestNG.whiteboardAndProjectsTests.createProjectStandard">
     <configuration name="fakeUser" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="as_UIAutomation_QA" />
       <extension name="coverage">
@@ -193,10 +196,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.whiteboardAndProjectsTests.createProjectStandard (1)" />
-        <item itemvalue="TestNG.fakeUser" />
         <item itemvalue="TestNG.whiteboardAndProjectsTests.createProjectStandard" />
         <item itemvalue="TestNG.whiteboardAndProjectsTests" />
+        <item itemvalue="TestNG.whiteboardAndProjectsTests.createProjectStandard (1)" />
+        <item itemvalue="TestNG.fakeUser" />
         <item itemvalue="TestNG.flowANewClient" />
       </list>
     </recent_temporary>
@@ -224,7 +227,8 @@
       <workItem from="1666787873956" duration="126444000" />
       <workItem from="1667420384913" duration="33176000" />
       <workItem from="1667917243751" duration="20312000" />
-      <workItem from="1668119797976" duration="35898000" />
+      <workItem from="1668119797976" duration="62953000" />
+      <workItem from="1668622344420" duration="13930000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit and push">
       <created>1667401323964</created>
@@ -240,7 +244,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667930791987</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="renamed utility Environments.java to alphasightsEnvironments.java to prevent confusion with other classes.  Made changes to the dashboardPage object.  Improved the googleAuth utility to have simple environment handling (Staging, Prod etc.).  Added a lot to the projectCreationPage page object.  Started creating test for Project Creation v-1 in whiteboardAndProjectsTests.">
+      <created>1668518083830</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1668518083831</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -277,7 +288,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit and push" />
     <MESSAGE value="Added Enum for Environment handling.  Added Enum for NPSOptions to use with Project Creation scripts.  Added Java Faker dependency to populate fake data." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Enum for Environment handling.  Added Enum for NPSOptions to use with Project Creation scripts.  Added Java Faker dependency to populate fake data." />
+    <MESSAGE value="renamed utility Environments.java to alphasightsEnvironments.java to prevent confusion with other classes.  Made changes to the dashboardPage object.  Improved the googleAuth utility to have simple environment handling (Staging, Prod etc.).  Added a lot to the projectCreationPage page object.  Started creating test for Project Creation v-1 in whiteboardAndProjectsTests." />
+    <option name="LAST_COMMIT_MESSAGE" value="renamed utility Environments.java to alphasightsEnvironments.java to prevent confusion with other classes.  Made changes to the dashboardPage object.  Improved the googleAuth utility to have simple environment handling (Staging, Prod etc.).  Added a lot to the projectCreationPage page object.  Started creating test for Project Creation v-1 in whiteboardAndProjectsTests." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

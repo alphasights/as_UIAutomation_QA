@@ -25,7 +25,6 @@ public class flowANewClient extends loginTests {
 
     @BeforeGroups(groups = {"Pistachio"})
     public void automationClientAccountSetup() throws InterruptedException {
-        timeout = 10000;
         //verify Client Account Page is active
         BasePage
                 .clickMainLink(CLIENTS)
@@ -38,7 +37,6 @@ public class flowANewClient extends loginTests {
 
     @Test(groups = {"Pistachio", "New Client"})
     public void createClientContact_PTO() throws InterruptedException {
-        timeout = 10000;
         BasePage
                 .clickMainLink(CLIENTS)
                 .clickSubNavLink(CLIENT_CONTACTS);

@@ -8,7 +8,6 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-import org.openqa.selenium.By;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeGroups;
 
@@ -67,9 +66,9 @@ public class googleAuth {
     //endregion
 
     //region Locators
-    public SelenideElement googleUserNameInput = $(By.id("identifierId"));
+    public SelenideElement googleUserNameInput = $("#identifierId");
     public SelenideElement googleNextBtn = $x("//span[text()='Next']");
-    public SelenideElement googlePasswordInput = $(By.name("password"));
+    public SelenideElement googlePasswordInput = $x("//input[@name ='password']");
 
     
     public googleAuth environmentSelector(alphasightsEnvironments asEnvironement)
@@ -106,57 +105,60 @@ public class googleAuth {
         }
         return this;
     }
+    public void enterUserEmail(String GoogleEmail)
+    {
+        $(googleUserNameInput).shouldBe(editable);
+        googleUserNameInput.sendKeys(GoogleEmail);
+        $(googleNextBtn).shouldBe(editable);
+        googleNextBtn.click();
+    }
+
+    public void enterUserPassword(String GooglePW)
+    {
+        $(googlePasswordInput).shouldBe(editable);
+        googlePasswordInput.click();
+        googlePasswordInput.sendKeys(GooglePW);
+        $(googleNextBtn).shouldBe(editable);
+        googleNextBtn.click();
+    }
+
+
+    public static void config()
+    {
+        Configuration.browser = "chrome";
+        Configuration.browserSize ="1366x768";
+        Configuration.timeout = 15000;
+        SelenideLogger.addListener("allure", new AllureSelenide());
+    }
 
     @BeforeGroups(groups = {"Pistachio"})
     public void setUpQAPistachio() throws InterruptedException {
-        SelenideLogger.addListener("allure", new AllureSelenide());
+        config();
         environmentSelector(QA_PISTACHIO);
         open(testingURL);
-        Configuration.browserSize = "1080x1920";
-        $(googleUserNameInput).shouldBe(editable);
-        googleUserNameInput.sendKeys(googleUserName);
-        $(googleNextBtn).shouldBe(editable);
-        googleNextBtn.click();
-        $(googlePasswordInput).shouldBe(editable);
-        System.out.println(googlePassword);
-        googlePasswordInput.sendKeys(googlePassword);
-        $(googleNextBtn).shouldBe(editable);
-        googleNextBtn.click();
+        enterUserEmail(googleUserName);
+        enterUserPassword(googlePassword);
     }
 
 
     @BeforeGroups(groups = {"Client Platform"})
     public void setUpClientPlatform() throws InterruptedException {
-        SelenideLogger.addListener("allure", new AllureSelenide());
+        config();
         environmentSelector(QA_CLIENT_PLATFORM);
         open(testingURL);
-        Configuration.browserSize = "1080x1920";
-        $(googleUserNameInput).shouldBe(editable);
-        googleUserNameInput.sendKeys(googleUserName);
-        $(googleNextBtn).shouldBe(editable);
-        googleNextBtn.click();
-        $(googlePasswordInput).shouldBe(editable);
-        System.out.println(googlePassword);
-        googlePasswordInput.sendKeys(googlePassword);
-        $(googleNextBtn).shouldBe(editable);
-        googleNextBtn.click();
+        enterUserEmail(googleUserName);
+        enterUserPassword(googlePassword);
     }
+
+
 
     @BeforeGroups(groups = {"Delivery"})
     public void setUpDelivery() throws InterruptedException {
-        SelenideLogger.addListener("allure", new AllureSelenide());
+        config();
         environmentSelector(QA_DELIVERY);
         open(testingURL);
-        Configuration.browserSize = "1080 x 1920";
-        $(googleUserNameInput).shouldBe(editable);
-        googleUserNameInput.sendKeys(googleUserName);
-        $(googleNextBtn).shouldBe(editable);
-        googleNextBtn.click();
-        $(googlePasswordInput).shouldBe(editable);
-        System.out.println(googlePassword);
-        googlePasswordInput.sendKeys(googlePassword);
-        $(googleNextBtn).shouldBe(editable);
-        googleNextBtn.click();
+        enterUserEmail(googleUserName);
+        enterUserPassword(googlePassword);
     }
 
     @AfterSuite
@@ -170,8 +172,6 @@ public class googleAuth {
 
     public googleAuth() throws IOException, ParseException {
     }
-
-
 
         public void googleAuth() throws IOException, ParseException {
         }

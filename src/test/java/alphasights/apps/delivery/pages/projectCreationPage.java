@@ -1,23 +1,17 @@
 package alphasights.apps.delivery.pages;
 
 import com.codeborne.selenide.*;
-import com.github.javafaker.service.FakeValuesService;
-import com.github.javafaker.service.RandomService;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.openqa.selenium.By;
 import com.github.javafaker.*;
-import org.openqa.selenium.Keys;
-
 
 import java.io.FileReader;
 import java.io.IOException;
 import java.time.Duration;
-import java.util.Collection;
-import java.util.Locale;
 
-import static alphasights.apps.delivery.pages.NPSOptions.ON_COMPLETION;
+import static alphasights.apps.delivery.pages.ExternalDescriptions.COMMERCIAL;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 import static org.openqa.selenium.Keys.*;
@@ -35,18 +29,33 @@ public class projectCreationPage extends basePage {
     public String clientAccount = (String)jsonObject.get("clientAccount");
     Faker faker = new Faker();
 
-    String externalTitleVal = faker.rickAndMorty().character() + "Company";
-    String excludedCompaniesVal = faker.rickAndMorty().location() + "Company";
-    String codeNameVal = faker.rickAndMorty().quote();
+    String externalTitleVal = faker.rickAndMorty().character() + " Company";
+    String excludedCompaniesVal = faker.rickAndMorty().location() + " Company";
+    String codeNameVal = externalTitleVal + " " + excludedCompaniesVal + " Test";
     //endregion
 
     //region Locators
-    public SelenideElement projectOverviewForm = $("div.aui-bg-white.aui-fade-in");
+    //Project Creation Nav and Subnav
     public SelenideElement briefOverviewTab = $(By.id("overview-tab"));
     public SelenideElement projectAnglesTab = $(By.id("angle-tab"));
     public SelenideElement cancelBtn = $x("//button[contains(text() , 'Cancel')]");
     public SelenideElement createProject = $x("//button[text()='Create Project']");
-    public SelenideElement addAnchorCompanies = $("i.aui-icon-plus");
+    public SelenideElement addAnchorCompanies = $("div:first-child > div > div > i.aui-icon.aui-icon-plus.aui-text-white.aui-font-hairline.aui-text-modal-header");
+    public SelenideElement addInvestmentTargets = $("div:last-child > div > div > i.aui-icon.aui-icon-plus.aui-text-white.aui-font-hairline.aui-text-modal-header");
+    //endregion
+
+    //region Brief Overview Form
+    public SelenideElement projectOverviewForm = $("div.aui-bg-white.aui-fade-in");
+
+    public SelenideElement alphaCompaniesSearchSidebar = $("div.as-sidebar");
+    public SelenideElement alphaCompaniesClosingIcon = $("i.aui-icon-close");
+    public SelenideElement projectMatchesDetectedModal = $("div.aui-modal-content.aui-shadow-huge.aui-bg-white.aui-rounded.aui-mx-auto.as-deal-confirmation-modal");
+    public SelenideElement projectMatchesModalClose = $("div.aui-inline-block > i.aui-icon-close");
+    public SelenideElement alphaCompaniesSearch = $x("//textarea[@placeholder= 'Enter companies…']");
+    public SelenideElement alphaCompanyAddedConfirmationMsg = $("div.aui-fade-in.aui-font-medium");
+    public SelenideElement alphaCompaniesSearchIcon = $("i.company-search-icon");
+    public SelenideElement alphaCompaniesNextStep = $("button.aui-border.aui-bg-grey-5.aui-border-grey-5.aui-border-solid.aui-text-white.aui-cursor-pointer.aui-py-3.aui-px-4.aui-rounded.aui-text-base.aui-outline-none.aui-font-semibold.aui-text-sub-text.aui-px-6.aui-mt-16");
+    public SelenideElement alphaCompaniesAddUnknown = $("div > button.aui-border.aui-bg-transparent.aui-border-transparent.aui-text-dark-1.aui-cursor-pointer.aui-py-3.aui-px-4.aui-outline-none.aui-font-semibold");
     public SelenideElement clientInstructionsTextArea = $x("//textarea[contains (@placeholder, 'Overall project scope. For example, workforce management solutions or')]");
     public SelenideElement internalDeliveryGuidelinesTextArea = $x("//textarea[text()='Internal project notes, for example Update the client every day at 6']");
     public SelenideElement clientEntitySelector = $x("//span[text()='Select Entity']");
@@ -64,25 +73,38 @@ public class projectCreationPage extends basePage {
     public SelenideElement selectedClientAccount = $("div.x-form-field.x-form-field--select.x-form-field--client-account.x-form-field--required.ember-view > div.ember-view > span.aui.x-form-field__element--select.ember-view > div.ember-basic-dropdown.ember-view > div.ember-power-select-trigger.x-form-field__element.ember-basic-dropdown-trigger.ember-basic-dropdown-trigger--in-place.ember-view > span.ember-power-select-selected-item");
     public SelenideElement clientAccountInput = $("div.ember-power-select-search");
     public SelenideElement lastClientAccountSelectOption = $("li.ember-power-select-option:last-child");
-    public SelenideElement allNPSoptions = $("project-form-group__row.project-form-group__row--middle");
-    public SelenideElement onCompletion = $x("//checkbox[text()='On completion']");
-    public SelenideElement atOneWeekInactivity = $x("//checkbox[text()='At one week inactivity']");
-    public SelenideElement optOut = $x("//checkbox[text()='Opt-out']");
+    public SelenideElement allNPSoptions = $("div.project-form-group__row.project-form-group__row--middle");
+    public SelenideElement onCompletion = $("div.x-form-field--send-nps-on-completion > label > input");
+    public SelenideElement atOneWeekInactivity = $("div.x-form-field--send-nps-on-inactivity > label > input");
+    public SelenideElement optOut = $("div.x-form-field--nps-opt-out > label > input");
     public SelenideElement contactMethodNewSpeak = $x("//button[text()='New Speak']");
     public SelenideElement contactMethodConference = $x("//button[text()='Conference']");
     public SelenideElement contactMethodCustom = $x("//button[text()='Custom']");
     public SelenideElement conferenceTypeSelector = $("div.ember-power-select-trigger.x-form-field__element.ember-basic-dropdown-trigger.ember-basic-dropdown-trigger--in-place.ember-basic-dropdown-trigger--left.ember-basic-dropdown-trigger--below.ember-view");
     public SelenideElement externalTitle = $x("//input[@placeholder= 'Will be visible to Advisors and Clients']");
+    public SelenideElement externalDescriptions = $("div.x-form-field--description-perspectives");
+    public SelenideElement extDescCommercial = $x("//label [text()= 'Commercial' ]");
     public SelenideElement lastExternalDescriptor = $("div.project-form-group__checkbox.project-form-group__checkbox--perspectives:last-child");
     public SelenideElement excludedCompanies = $x("//input[@placeholder= 'e.g. Shell, Statoil']");
     public SelenideElement codeNameInput = $x("//div[@class= 'x-form-field x-form-field--input x-form-field--codename x-form-field--required ember-view']//label[text()='Codename']/following-sibling::input");
+    //endregion
+
+    //region Project Angles Form
+    public SelenideElement addNewAngle = $x("//div[text() = 'Add New Angle']");
+    public SelenideElement seeSummary = $x("//button[contains(text(), 'See Summary')]");
+    public SelenideElement angleTypeInput = $x("//span[text() = 'Select Angle Type']");
+    public SelenideElement angleTypeSelector = $("input.ember-power-select-search-input");
+    public SelenideElement angleNameInput = $x("//input[@placeholder= 'New Angle']");
+    public SelenideElement assignTeamMembers = $x("//input[@placeholder= 'Search for Team Members']");
+    projectDetailsPage ProjectDetailsPage = new projectDetailsPage();
+
+    //endregion
+    //region
+    //endregion
 
     public projectCreationPage() throws IOException, ParseException {
     }
-    //public SelenideElement excludedCompanies = $("input.aui-rounded.aui-p-3.focus:aui-outline-none.aui-shadow-inner.aui-appearance-none.aui-text-dark-1.aui-bg-grey-1.focus:aui-bg-white.aui-border.focus:aui-border-error-1.aui-border-grey-2.aui-border-solid.aui-w-full.ember-view");
-    //public SelenideElement internalCodename = $("input.aui-rounded.aui-p-3.focus:aui-outline-none.aui-shadow-inner.aui-appearance-none.aui-text-dark-1.aui-bg-grey-1.focus:aui-bg-white.aui-border.focus:aui-border-error-1.aui-border-grey-2.aui-border-solid.aui-w-full.ember-view");
-    //public SelenideElement internalState = $("div.ember-power-select-trigger.x-form-field__element.ember-basic-dropdown-trigger.ember-basic-dropdown-trigger--in-place.ember-view");
-    //endregion
+     //endregion
 
     //region Methods
     public projectCreationPage clickBriefOverviewTab()
@@ -113,20 +135,48 @@ public class projectCreationPage extends basePage {
         return this;
     }
 
-    public projectCreationPage createProject(NPSOptions NPSOption)
+    public projectCreationPage clickAnchorCompanies()
+    {
+        $(addAnchorCompanies).shouldBe(editable);
+        addAnchorCompanies.click();
+        return this;
+    }
+
+    public projectCreationPage clickInvestmentTargets()
+    {
+        $(addInvestmentTargets).shouldBe(editable);
+        addInvestmentTargets.click();
+
+        return this;
+    }
+
+    public projectCreationPage enterAlphaCompany(String company)
+    {
+        $(alphaCompaniesSearchSidebar).shouldBe(editable);
+        alphaCompaniesSearch.sendKeys(company + ENTER);
+        $(alphaCompanyAddedConfirmationMsg).shouldHave(partialText(company + " was added"));
+        $(alphaCompaniesClosingIcon).shouldBe(enabled);
+        alphaCompaniesClosingIcon.click();
+        $(projectMatchesDetectedModal).shouldBe(visible);
+        projectMatchesModalClose.click();
+        return this;
+    }
+
+    public projectCreationPage enterFirstAngle(String type, String name)
+    {
+        $(angleTypeInput).shouldBe(editable);
+        angleTypeInput.click();
+        angleTypeSelector.sendKeys(type);
+        selectFirstOptionEmberDropdown(type);
+        $(angleNameInput).shouldBe(editable);
+        angleNameInput.sendKeys(name);
+        return this;
+    }
+
+    public projectCreationPage focusOnProjectOverviewForm()
     {
         $(projectOverviewForm).should(editable, Duration.ofSeconds(10));
         projectOverviewForm.click();
-        enterClientInstructions();
-        enterClientEntity();
-        pressTab(2);
-        enterClientCategory();
-        enterClientContact();
-        enterAccount();
-        selectNPS(NPSOption);
-        enterExternalTitle();
-        enterExcludedCompanies();
-        enterCodeName();
         return this;
     }
 
@@ -179,6 +229,7 @@ public class projectCreationPage extends basePage {
     public projectCreationPage selectNPS(NPSOptions npsOption)
     {
         $(allNPSoptions).shouldBe(editable);
+        actions().moveToElement(allNPSoptions);
         switch(npsOption)
         {
             case ON_COMPLETION:
@@ -205,6 +256,25 @@ public class projectCreationPage extends basePage {
     {
         $(externalTitle).shouldBe(editable);
         externalTitle.sendKeys(externalTitleVal);
+        return this;
+    }
+
+    public projectCreationPage selectExternalDescription(ExternalDescriptions extDesc)
+    {
+        $(externalDescriptions).shouldBe(editable);
+        actions().moveToElement(externalDescriptions);
+        switch(extDesc)
+        {
+            case COMMERCIAL:
+                $(extDescCommercial).shouldBe(editable);
+                extDescCommercial.click();
+                break;
+            default:
+                System.out.println("Invalid External Description entered.");
+
+
+        }
+
         return this;
     }
 
@@ -251,6 +321,31 @@ public class projectCreationPage extends basePage {
         return this;
     }
 
+    public projectCreationPage createProject(NPSOptions NPSOption, String Company, String angleType, String angleName)
+    {
+        clickAnchorCompanies();
+        enterAlphaCompany(Company);
+        focusOnProjectOverviewForm();
+        enterClientInstructions();
+        enterClientEntity();
+        enterClientCategory();
+        enterClientContact();
+        enterAccount();
+        selectNPS(NPSOption);
+        enterExternalTitle();
+        selectExternalDescription(COMMERCIAL);
+        enterExcludedCompanies();
+        enterCodeName();
+        clickProjectAngles();
+        enterFirstAngle(angleType, angleName);
+        return this;
+    }
+
+    public projectCreationPage verifyProjectCreated()
+    {
+        $(ProjectDetailsPage.projectExternalTitle).shouldHave(text(externalTitleVal));
+        return this;
+    }
 
 
     //endregion
