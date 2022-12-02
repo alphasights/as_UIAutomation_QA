@@ -1,6 +1,7 @@
 package alphasights.apps.delivery.pages;
 
 
+import alphasights.apps.pistachio.pages.pistachioBasePage;
 import com.codeborne.selenide.SelenideElement;
 
 import java.time.Duration;
@@ -10,7 +11,7 @@ import static com.codeborne.selenide.Condition.enabled;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
 
-public class dashboardPage extends basePage{
+public class dashboardPage extends pistachioBasePage {
     //region Variable
     //endregion
 
@@ -21,7 +22,7 @@ public class dashboardPage extends basePage{
     //region Methods
     public dashboardPage pageLoad()
     {
-        $("div:last-child > div> div.empty-message").shouldBe(editable);
+        $("div.interactions-to-schedule > div.content").shouldBe(editable);
         return this;
     }
 

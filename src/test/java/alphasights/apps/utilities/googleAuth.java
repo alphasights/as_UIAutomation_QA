@@ -11,9 +11,11 @@ import org.json.simple.parser.ParseException;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeGroups;
 
-import java.io.*;
-import java.net.*;
-
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.URL;
 
 import static alphasights.apps.utilities.alphasightsEnvironments.*;
 import static com.codeborne.selenide.Condition.editable;
@@ -131,7 +133,7 @@ public class googleAuth {
         SelenideLogger.addListener("allure", new AllureSelenide());
     }
 
-    @BeforeGroups(groups = {"Pistachio"})
+    @BeforeGroups(groups = {"Pistachio", "ptoSetup"})
     public void setUpQAPistachio() throws InterruptedException {
         config();
         environmentSelector(QA_PISTACHIO);
@@ -141,18 +143,19 @@ public class googleAuth {
     }
 
 
-    @BeforeGroups(groups = {"Client Platform"})
+    @BeforeGroups(groups = {"ClientPlatform", "clientPlatformSetup"})
     public void setUpClientPlatform() throws InterruptedException {
         config();
         environmentSelector(QA_CLIENT_PLATFORM);
         open(testingURL);
         enterUserEmail(googleUserName);
         enterUserPassword(googlePassword);
+        System.out.println("Client Platform is setup.");
     }
 
 
 
-    @BeforeGroups(groups = {"Delivery"})
+    @BeforeGroups(groups = {"Delivery", "deliverySetup"})
     public void setUpDelivery() throws InterruptedException {
         config();
         environmentSelector(QA_DELIVERY);
@@ -164,10 +167,7 @@ public class googleAuth {
     @AfterSuite
     public void endSession()
     {
-        if(Selenide.sessionId() != null){
             Selenide.clearBrowserCookies();
-            Selenide.closeWebDriver();
-        }
     }
 
     public googleAuth() throws IOException, ParseException {

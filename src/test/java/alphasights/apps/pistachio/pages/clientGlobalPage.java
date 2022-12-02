@@ -1,13 +1,11 @@
 package alphasights.apps.pistachio.pages;
 
 import com.codeborne.selenide.SelenideElement;
-import com.codeborne.selenide.ElementsCollection;
 import org.openqa.selenium.By;
 
-import static com.codeborne.selenide.Selectors.*;
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.$;
 
-public class clientGlobalPage extends basePage{
+public class clientGlobalPage extends pistachioBasePage{
     //region Variables
     public String clientGlobalUrl = "https://qa-pistachio.alphasights.com/client/targets";
     //endregion

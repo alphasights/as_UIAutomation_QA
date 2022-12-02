@@ -3,15 +3,13 @@ package alphasights.apps.delivery.pages;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WindowType;
 
 import java.util.Collection;
 
 import static com.codeborne.selenide.Condition.editable;
 import static com.codeborne.selenide.Selenide.*;
-import static org.openqa.selenium.WindowType.TAB;
 
-public class basePage {
+public class deliveryBasePage {
     //region Main Nav Links
     public SelenideElement dashboardLink = $(By.linkText("Dashboard"));
 
@@ -49,7 +47,7 @@ public class basePage {
 
     public SelenideElement userNavDropdown = $("ul:last-child > li.top-nav__item.top-nav__item--has-dropdown:last-child");
 
-    public basePage clickUserNavDropdown()
+    public deliveryBasePage clickUserNavDropdown()
     {
         $(userNavDropdown).shouldBe(editable);
         userNavDropdown.click();
@@ -57,14 +55,14 @@ public class basePage {
         return this;
     }
 
-    public basePage clickWhiteboardAndProjects()
+    public deliveryBasePage clickWhiteboardAndProjects()
     {
         $(whiteboardAndProjectsLink).shouldBe(editable);
         whiteboardAndProjectsLink.click();
         return this;
     }
 
-    public basePage clickNewProject()
+    public deliveryBasePage clickNewProject()
     {
         clickWhiteboardAndProjects();
         $(newProjectLink).shouldBe(editable);

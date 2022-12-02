@@ -2,20 +2,15 @@ package alphasights.apps.pistachio.pages;
 
 import com.codeborne.selenide.*;
 import org.openqa.selenium.By;
-import org.openqa.selenium.PageLoadStrategy;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
 
 import java.time.Duration;
 
 import static com.codeborne.selenide.Condition.editable;
-import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 
-public class basePage {
+public class pistachioBasePage {
     //region Variables
     //endregion
 
@@ -127,7 +122,7 @@ public class basePage {
 
     //region Methods
     //region Actions
-    public basePage clickMainLink(internalTabNavs mainLinkName )
+    public pistachioBasePage clickMainLink(internalTabNavs mainLinkName )
     {
         switch(mainLinkName){
             case ME:
@@ -163,7 +158,7 @@ public class basePage {
     }
 
 
-    public basePage clickSubNavLink(pistachioPages subNavlinkName) throws InterruptedException {
+    public pistachioBasePage clickSubNavLink(pistachioPages subNavlinkName) throws InterruptedException {
 
         switch(subNavlinkName) {
             case NEW_IDEA:
@@ -294,21 +289,21 @@ public class basePage {
         return this;
     }
 
-    public basePage clickSignOut()
+    public pistachioBasePage clickSignOut()
     {
         $(signOut).shouldBe(editable);
         signOut.click();
         return this;
     }
 
-    public basePage clickSearch()
+    public pistachioBasePage clickSearch()
     {
         $(search).shouldBe(editable);
         search.click();
         return this;
     }
 
-    public basePage enterSearch(String query)
+    public pistachioBasePage enterSearch(String query)
     {
         $(search).shouldBe(editable);
         search.sendKeys(query);
@@ -321,7 +316,7 @@ public class basePage {
 
     //endregion
 
-    public basePage()
+    public pistachioBasePage()
     {
     }
 }

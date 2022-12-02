@@ -1,11 +1,12 @@
 package alphasights.apps.clientPlatform.pages;
 
+import alphasights.apps.pistachio.pages.pistachioBasePage;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$;
 
-public class projectsPage extends basePage{
+public class projectsPage extends pistachioBasePage {
 
     //region Variables
     public String projectsUrl = "https://qa-portal-staging.alphasights.com/my-projects";

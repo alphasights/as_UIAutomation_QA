@@ -4,17 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3a9f36c8-cb73-4dac-9098-1c158688f90d" name="Changes" comment="renamed utility Environments.java to alphasightsEnvironments.java to prevent confusion with other classes.  Made changes to the dashboardPage object.  Improved the googleAuth utility to have simple environment handling (Staging, Prod etc.).  Added a lot to the projectCreationPage page object.  Started creating test for Project Creation v-1 in whiteboardAndProjectsTests.">
-      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/pages/ExternalDescriptions.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/pages/projectDetailsPage.java" afterDir="false" />
+    <list default="true" id="3a9f36c8-cb73-4dac-9098-1c158688f90d" name="Changes" comment="Created an Enum class for External Descriptions.  Got rid of timeouts in individual test methods and passed from the initial config method in googleAuth.  Added more reusable methods in googleAuth and got rid of some unused imports.  Added some Locators and reusable methods to projectCreationPage.  Created projectDetailsPage.  Added Delivery tests to the testng.xml.  Added clickCreateProjects method and added an verifyProjectCreated method.">
+      <change afterPath="$PROJECT_DIR$/regressionFlows.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/invalidLoginTests/invalidLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/invalidLoginTests/invalidLogins.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/originalFlows/flowANewClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/originalFlows/flowANewClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/pages/basePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/pages/clientPlatformBasePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/pages/projectsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/pages/projectsPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/pages/signInPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/pages/signInPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/validLoginTests/pageTests/projectsTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/validLoginTests/pageTests/projects.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/validLoginTests/validLoginTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/validLoginTests/validLogins.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/pages/basePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/pages/deliveryBasePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/pages/dashboardPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/pages/dashboardPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/pages/projectCreationPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/pages/projectCreationPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/tests/whiteboardAndProjectsTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/tests/whiteboardAndProjectsTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/pages/projectDetailsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/pages/projectDetailsPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/tests/whiteboardAndProjectsTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/tests/whiteboardAndProjects.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/pistachio/pages/basePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/pistachio/pages/pistachioBasePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/pistachio/pages/clientAccountsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/pistachio/pages/clientAccountsPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/pistachio/pages/clientContactsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/pistachio/pages/clientContactsPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/pistachio/pages/clientEntitiesPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/pistachio/pages/clientEntitiesPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/pistachio/pages/clientGlobalPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/pistachio/pages/clientGlobalPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/pistachio/tests/loginTests/loginTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/pistachio/tests/loginTests/login.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/utilities/googleAuth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/utilities/googleAuth.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/clientPlatform-invalidLoginTests.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +40,7 @@
       <list>
         <option value="Enum" />
         <option value="Class" />
+        <option value="Tag Library Descriptor" />
       </list>
     </option>
   </component>
@@ -56,6 +71,15 @@
         <option value="master" />
       </list>
     </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/originalFlows/flowANewClient.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/pages/dashboardPage.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/pages/deliveryBasePage.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/pages/projectDetailsPage.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/tests/whiteboardAndProjects.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/test/java/alphasights/apps/pistachio/pages/clientContactsPage.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/test/java/alphasights/apps/pistachio/tests/loginTests/login.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -107,18 +131,11 @@
       <recent name="alphasights.apps.pistachio.pages" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.whiteboardAndProjectsTests.createProjectStandard">
-    <configuration name="fakeUser" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.flowANewClient.signOutOfPortal">
+    <configuration name="/Users/user/Documents/GitHub/as_UIAutomation_QA/clientPlatform-invalidLoginTests.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="as_UIAutomation_QA" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="alphasights.apps.clientPlatform.invalidLoginTests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="alphasights.apps.clientPlatform.invalidLoginTests" />
-      <option name="MAIN_CLASS_NAME" value="alphasights.apps.clientPlatform.invalidLoginTests.fakeUser" />
-      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/clientPlatform-invalidLoginTests.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
       <properties />
       <listeners />
       <method v="2">
@@ -135,6 +152,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="alphasights.apps.clientPlatform.originalFlows" />
       <option name="MAIN_CLASS_NAME" value="alphasights.apps.clientPlatform.originalFlows.flowANewClient" />
+      <option name="METHOD_NAME" value="createClientContact_PTO" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -142,33 +160,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="whiteboardAndProjectsTests" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="flowANewClient.createClientContact_Delivery" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="as_UIAutomation_QA" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="alphasights.apps.delivery.tests.*" />
+          <option name="PATTERN" value="alphasights.apps.clientPlatform.originalFlows.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="alphasights.apps.delivery.tests" />
-      <option name="MAIN_CLASS_NAME" value="alphasights.apps.delivery.tests.whiteboardAndProjectsTests" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="whiteboardAndProjectsTests.createProjectStandard (1)" type="TestNG" temporary="true" nameIsGenerated="true">
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="alphasights.apps.delivery.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="alphasights.apps.delivery.tests" />
-      <option name="MAIN_CLASS_NAME" value="alphasights.apps.delivery.tests.whiteboardAndProjectsTests" />
-      <option name="METHOD_NAME" value="createProjectStandard" />
+      <option name="PACKAGE_NAME" value="alphasights.apps.clientPlatform.originalFlows" />
+      <option name="MAIN_CLASS_NAME" value="alphasights.apps.clientPlatform.originalFlows.flowANewClient" />
+      <option name="METHOD_NAME" value="createClientContact_Delivery" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -176,17 +178,35 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="whiteboardAndProjectsTests.createProjectStandard" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="flowANewClient.createClientContact_PTO" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="as_UIAutomation_QA" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="alphasights.apps.delivery.tests.*" />
+          <option name="PATTERN" value="alphasights.apps.clientPlatform.originalFlows.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="alphasights.apps.delivery.tests" />
-      <option name="MAIN_CLASS_NAME" value="alphasights.apps.delivery.tests.whiteboardAndProjectsTests" />
-      <option name="METHOD_NAME" value="createProjectStandard" />
+      <option name="PACKAGE_NAME" value="alphasights.apps.clientPlatform.originalFlows" />
+      <option name="MAIN_CLASS_NAME" value="alphasights.apps.clientPlatform.originalFlows.flowANewClient" />
+      <option name="METHOD_NAME" value="createClientContact_PTO" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="flowANewClient.signOutOfPortal" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="as_UIAutomation_QA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="alphasights.apps.clientPlatform.originalFlows.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="alphasights.apps.clientPlatform.originalFlows" />
+      <option name="MAIN_CLASS_NAME" value="alphasights.apps.clientPlatform.originalFlows.flowANewClient" />
+      <option name="METHOD_NAME" value="signOutOfPortal" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -196,10 +216,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.whiteboardAndProjectsTests.createProjectStandard" />
-        <item itemvalue="TestNG.whiteboardAndProjectsTests" />
-        <item itemvalue="TestNG.whiteboardAndProjectsTests.createProjectStandard (1)" />
-        <item itemvalue="TestNG.fakeUser" />
+        <item itemvalue="TestNG.flowANewClient.signOutOfPortal" />
+        <item itemvalue="TestNG./Users/user/Documents/GitHub/as_UIAutomation_QA/clientPlatform-invalidLoginTests.xml" />
+        <item itemvalue="TestNG.flowANewClient.createClientContact_Delivery" />
+        <item itemvalue="TestNG.flowANewClient.createClientContact_PTO" />
         <item itemvalue="TestNG.flowANewClient" />
       </list>
     </recent_temporary>
@@ -228,7 +248,8 @@
       <workItem from="1667420384913" duration="33176000" />
       <workItem from="1667917243751" duration="20312000" />
       <workItem from="1668119797976" duration="62953000" />
-      <workItem from="1668622344420" duration="13930000" />
+      <workItem from="1668622344420" duration="114236000" />
+      <workItem from="1669987715369" duration="5728000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit and push">
       <created>1667401323964</created>
@@ -251,7 +272,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668518083831</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Created an Enum class for External Descriptions.  Got rid of timeouts in individual test methods and passed from the initial config method in googleAuth.  Added more reusable methods in googleAuth and got rid of some unused imports.  Added some Locators and reusable methods to projectCreationPage.  Created projectDetailsPage.  Added Delivery tests to the testng.xml.  Added clickCreateProjects method and added an verifyProjectCreated method.">
+      <created>1668636941000</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1668636941000</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -289,7 +317,8 @@
     <MESSAGE value="Initial commit and push" />
     <MESSAGE value="Added Enum for Environment handling.  Added Enum for NPSOptions to use with Project Creation scripts.  Added Java Faker dependency to populate fake data." />
     <MESSAGE value="renamed utility Environments.java to alphasightsEnvironments.java to prevent confusion with other classes.  Made changes to the dashboardPage object.  Improved the googleAuth utility to have simple environment handling (Staging, Prod etc.).  Added a lot to the projectCreationPage page object.  Started creating test for Project Creation v-1 in whiteboardAndProjectsTests." />
-    <option name="LAST_COMMIT_MESSAGE" value="renamed utility Environments.java to alphasightsEnvironments.java to prevent confusion with other classes.  Made changes to the dashboardPage object.  Improved the googleAuth utility to have simple environment handling (Staging, Prod etc.).  Added a lot to the projectCreationPage page object.  Started creating test for Project Creation v-1 in whiteboardAndProjectsTests." />
+    <MESSAGE value="Created an Enum class for External Descriptions.  Got rid of timeouts in individual test methods and passed from the initial config method in googleAuth.  Added more reusable methods in googleAuth and got rid of some unused imports.  Added some Locators and reusable methods to projectCreationPage.  Created projectDetailsPage.  Added Delivery tests to the testng.xml.  Added clickCreateProjects method and added an verifyProjectCreated method." />
+    <option name="LAST_COMMIT_MESSAGE" value="Created an Enum class for External Descriptions.  Got rid of timeouts in individual test methods and passed from the initial config method in googleAuth.  Added more reusable methods in googleAuth and got rid of some unused imports.  Added some Locators and reusable methods to projectCreationPage.  Created projectDetailsPage.  Added Delivery tests to the testng.xml.  Added clickCreateProjects method and added an verifyProjectCreated method." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

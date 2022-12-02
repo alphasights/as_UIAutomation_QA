@@ -7,7 +7,7 @@ import org.openqa.selenium.By;
 import static com.codeborne.selenide.Condition.editable;
 import static com.codeborne.selenide.Selenide.*;
 
-public class basePage {
+public class clientPlatformBasePage {
 
     //region Variables
     //endregion
@@ -28,7 +28,7 @@ public class basePage {
 
     //region Methods
 
-    public basePage clickSubNavLink(clientPlatformPages linkName)
+    public clientPlatformBasePage clickSubNavLink(clientPlatformPages linkName)
     {
         switch(linkName){
             case CONTENT:
@@ -58,28 +58,28 @@ public class basePage {
         return this;
     }
 
-    public basePage clickInformationIcon()
+    public clientPlatformBasePage clickInformationIcon()
     {
         $(informationIcon).shouldBe(editable);
         informationIcon.click();
         return this;
     }
 
-    public basePage clickUserNavDropdown()
+    public clientPlatformBasePage clickUserNavDropdown()
     {
         $(userNavDropdown).shouldBe(editable);
         userNavDropdown.click();
         return this;
     }
 
-    public basePage clickPreferences()
+    public clientPlatformBasePage clickPreferences()
     {
         $(preferences).shouldBe(editable);
         preferences.click();
         return this;
     }
 
-    public basePage clickSignOut()
+    public clientPlatformBasePage clickSignOut()
     {
         $(signOut).shouldBe(editable);
         signOut.click();

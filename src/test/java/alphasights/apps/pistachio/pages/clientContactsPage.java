@@ -1,20 +1,20 @@
 package alphasights.apps.pistachio.pages;
 
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.openqa.selenium.By;
-import org.testng.Assert;
 
 import java.io.FileReader;
 import java.io.IOException;
-import java.time.Duration;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.$x;
 
-public class clientContactsPage extends basePage{
+public class clientContactsPage extends pistachioBasePage{
     //region Variables
     public String clientContactsUrl = "https://qa-pistachio.alphasights.com/client/contacts";
     public String currentKeyword = null;
@@ -26,7 +26,7 @@ public class clientContactsPage extends basePage{
 
     String contactName = (String)jsonObject.get("contactName");
     String primaryEmail = (String)jsonObject.get("primaryEmail");
-    String accountName = (String)jsonObject.get("AccountName");
+    String accountName = (String)jsonObject.get("accountName");
     String supervisors = (String)jsonObject.get("supervisors");
     String role = (String)jsonObject.get("role");
 
@@ -47,8 +47,11 @@ public class clientContactsPage extends basePage{
     public SelenideElement newContactNameInput = $(By.id("client_contact_name"));
     public SelenideElement newContactPrimaryEmailInput = $(By.id("client_contact_email"));
     public SelenideElement newContactDetailsInput = $(By.id("client_contact_new_contact_details"));
-    public SelenideElement newContactAccountSelector = $(By.id("select2-chosen"));
-    public SelenideElement newContactAccountInput = $(By.id("div#select2-drop > div.select2-search > input.select2-input"));
+    public SelenideElement newContactAccountSelector = $x("//span[contains(text(),'Select Account')]");
+    public SelenideElement searchboxInput = $("#select2-drop > div > input");
+    public SelenideElement searchboxDropdown = $("#select2-drop");
+    public SelenideElement firstSearchResult = $("div.select2-result-label");
+    public SelenideElement newContactAccountInput = $("input.select2-input.select2-focused");
     public SelenideElement newContactAccountLabel = $("li:first-child > div.select2-result-label");
     public SelenideElement newContactOwnerSelector = $(By.id("client_contact_owner_id"));
     public SelenideElement newContactSupervisorSelector = $(By.id("s2id_client_contact_supervisor_ids"));
@@ -60,7 +63,15 @@ public class clientContactsPage extends basePage{
     public SelenideElement newContactAddressInput = $(By.id("client_contact_correspondence_address"));
     public SelenideElement newContactCountrySelector = $(By.id("client_contact_country_id"));
     public SelenideElement saveContact = $(("button.button.save"));
-
+    public SelenideElement sendInvite = $(By.linkText("Send invite"));
+    public SelenideElement sendPortalInviteModal = $("#client-contacts_controller > div.ui-dialog.ui-corner-all.ui-widget.ui-widget-content.ui-front.ui-dialog-buttons");
+    public SelenideElement sendPortalInviteText = $x("//div[text()='This will send the Client an email invite to the Portal. Continue?']");
+    public SelenideElement yesSendInvite = $x("//button[text()='Yes, Send Invite']");
+    public SelenideElement noCancel = $x("//button[text()= 'No, Cancel']");
+    public SelenideElement closeSendPortalInviteModal = $("#client-contacts_controller > div.ui-dialog.ui-corner-all.ui-widget.ui-widget-content.ui-front.ui-dialog-buttons > div.ui-dialog-titlebar.ui-corner-all.ui-widget-header.ui-helper-clearfix > button");
+    public SelenideElement portalInviteConfirmation = $("div.span.success");
+    public SelenideElement deleteButton = $x("//a[text()='Delete']");
+    public SelenideElement clientDeletionConfirmation = $("div.message_flash.success");
     //endregion
     //endregion
 
@@ -68,7 +79,7 @@ public class clientContactsPage extends basePage{
     public clientContactsPage pageLoaded()
     {
         $(pageHeading).shouldBe(enabled);
-        $(lastClientContactRow).should(enabled, Duration.ofSeconds(10));
+        $(lastClientContactRow).should(enabled);
         $(pageHeading).shouldHave(text("Clients"));
         System.out.println("Client Contacts Page is loaded: Page Header - " + pageHeading.getText());
         return this;
@@ -90,16 +101,34 @@ public class clientContactsPage extends basePage{
         return this;
     }
 
+    public clientContactsPage selectSearchedContact(String keywords)
+    {
+        searchContact(keywords);
+        SelenideElement searchedClientContact = $(By.linkText(keywords));
+        searchedClientContact.click();
+        return this;
+    }
+
     public clientContactsPage createContactBasic()
     {
+        $(newContactNameInput).shouldBe(editable);
         newContactNameInput.sendKeys(contactName);
+        $(newContactPrimaryEmailInput).shouldBe(editable);
         newContactPrimaryEmailInput.sendKeys(primaryEmail);
         newContactAccountSelector.click();
-        newContactAccountInput.sendKeys(accountName);
-        newContactAccountLabel.click();
-        newContactSupervisorSelector.setValue(supervisors).pressEnter();
-        newContactRoleSelector.selectOption(role);
+        selectFirstOption();
         saveContact.click();
+        return this;
+    }
+
+    public clientContactsPage selectFirstOption()
+    {
+        $(searchboxInput).shouldBe(editable);
+        searchboxInput.click();
+        searchboxInput.clear();
+        searchboxInput.sendKeys(accountName);
+        $(searchboxDropdown).shouldBe(editable);
+        firstSearchResult.click();
         return this;
     }
 
@@ -117,6 +146,70 @@ public class clientContactsPage extends basePage{
         }
         return this;
     }
+
+    public clientContactsPage clickSendInvite()
+    {
+        $(sendInvite).shouldBe(editable);
+        sendInvite.click();
+        return this;
+    }
+
+    public clientContactsPage verifySendInviteModalDisplays()
+    {
+        $(sendPortalInviteModal).shouldBe(editable);
+        $(sendPortalInviteText).should(exist);
+        System.out.println("Send Portal Invite modal displays successfully.");
+        return this;
+    }
+
+    public clientContactsPage clickYesSendInvite()
+    {
+        $(yesSendInvite).shouldBe(editable);
+        yesSendInvite.click();
+        System.out.println("Send Portal Invite accepted.");
+        return this;
+    }
+    
+    public clientContactsPage clickNoCancelInvite()
+    {
+        $(noCancel).shouldBe(editable);
+        noCancel.click();
+        return this;
+    }
+
+    public clientContactsPage clickCloseSendInviteModal()
+    {
+        $(closeSendPortalInviteModal).shouldBe(editable);
+        closeSendPortalInviteModal.click();
+        return this;
+    }
+
+    public clientContactsPage verifyPortalInviteConfirmation()
+    {
+        $(portalInviteConfirmation).shouldBe(visible);
+        return this;
+    }
+
+    public clientContactsPage clickDeleteContact()
+    {
+        $(deleteButton).shouldBe(enabled);
+        deleteButton.click();
+        return this;
+    }
+
+    public clientContactsPage confirmDeleteContact()
+    {
+        Selenide.switchTo().alert().accept();
+        return this;
+    }
+
+    public clientContactsPage verifyClientDeletionMessage()
+    {
+        $(clientDeletionConfirmation).shouldBe(visible);
+        return this;
+    }
+
+
     //endregion
     public clientContactsPage() throws IOException, ParseException {
     }
