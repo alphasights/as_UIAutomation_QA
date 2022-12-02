@@ -343,6 +343,7 @@ public class projectCreationPage extends deliveryBasePage {
 
     public projectCreationPage verifyProjectCreated()
     {
+        $(ProjectDetailsPage.projectExternalTitle).shouldBe(enabled);
         $(ProjectDetailsPage.projectExternalTitle).shouldHave(text(externalTitleVal));
         return this;
     }

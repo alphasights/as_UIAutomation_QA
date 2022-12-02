@@ -22,8 +22,6 @@ m
 =src/test/java/alphasights/apps/delivery/pages/NPSOptions.java,5/a/5aa05d3e143485f6b23d8bb020082da66c926267
 †
 Vsrc/test/java/alphasights/apps/clientPlatform/invalidLoginTests/signInHelpButtons.java,f/3/f3782493388f344e409b4388af0d65657eeb957d
-u
-Esrc/test/java/alphasights/apps/utilities/alphasightsEnvironments.java,e/0/e0504f5896d47b8acf3455fcb47769134e0b299b
 w
 Gsrc/test/java/alphasights/apps/delivery/pages/ExternalDescriptions.java,d/6/d6497cf34ef6bb1ccf5918d498ba006cd0f49345
 |

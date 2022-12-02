@@ -10,6 +10,7 @@ import alphasights.apps.pistachio.pages.pistachioBasePage;
 import alphasights.apps.pistachio.pages.clientAccountsPage;
 import alphasights.apps.pistachio.pages.clientContactsPage;
 import alphasights.apps.pistachio.tests.loginTests.login;
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -105,7 +106,7 @@ public class flowANewClient extends login {
     @Test(groups = {"Delivery"})
     public void createClientContact_Delivery_SendInviteFromDelivery() throws InterruptedException {
         clientContactCreation_Delivery();
-
+        sendPortalInvitation_Delivery();
     }
 
     public void clientContactCreation_Delivery() throws InterruptedException {
@@ -113,18 +114,15 @@ public class flowANewClient extends login {
         ProjectDetailsPage
                 .clickEditProject()
                 .addNewClientContact();
-        DeliveryBasePage
-                .clickUserNavDropdown();
-        PistachioBasePage
-                .clickMainLink(CLIENTS)
-                .clickSubNavLink(CLIENT_CONTACTS);
-        ClientContactsPage
-                .selectSearchedContact("Automation Tester A");
     }
 
     public void sendPortalInvitation_Delivery()
     {
-
+        ProjectDetailsPage
+                .clickPortalInviteLink(1)
+                .verifySendPortalInviteModalDisplays()
+                .clickConfirmSendPortalInvite()
+                .verifyPortalInviteCompleted(1);
     }
 
     @Test(groups = {"ClientPlatform"})
@@ -138,7 +136,7 @@ public class flowANewClient extends login {
                 .clickSignOut();
     }
 
-    @AfterGroups(groups = {"New Client Contact"})
+    @AfterMethod(groups = {"New Client Contact"})
     public void deleteClientContact() throws SQLException, ClassNotFoundException {
         ClientContactsPage
                 .clickDeleteContact()
@@ -165,6 +163,13 @@ public class flowANewClient extends login {
                 .createProject(ON_COMPLETION, "Alpha Test", "Competitors", "Test Competitor Angle")
                 .clickCreateProjects()
                 .verifyProjectCreated();
+    }
+
+    @AfterTest
+    public void flowTeardown()
+    {
+        Selenide.clearBrowserCookies();
+        Selenide.closeWebDriver();
     }
 
 }
