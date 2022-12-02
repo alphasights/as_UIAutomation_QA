@@ -56,6 +56,7 @@ public class googleAuth {
     public URL stagingPistachioUrl = new URL("https://eng-playground.alphasights.com/client/accounts");
     public URL stagingDeliveryUrl = new URL("https://delivery-eng-playground.alphasights.com/dashboard");
     public URL stagingClientPlatformUrl = new URL("https://portal-staging.alphasights.com/sign-in");
+    public URL companiesDeliveryUrl = new URL("https://companies-delivery.alphasights.com/");
     //endregion
 
     //region Production
@@ -104,6 +105,9 @@ public class googleAuth {
             case PROD_CLIENT_PLATFORM:
                 testingURL = prodClientPlatformURL;
                 break;
+            case COMPANIES_DELIVERY:
+                testingURL = companiesDeliveryUrl;
+                break;
         }
         return this;
     }
@@ -134,7 +138,7 @@ public class googleAuth {
     }
 
     @BeforeGroups(groups = {"Pistachio", "ptoSetup"})
-    public void setUpQAPistachio() throws InterruptedException {
+    public void setupPistachio() throws InterruptedException {
         config();
         environmentSelector(QA_PISTACHIO);
         open(testingURL);
