@@ -46,7 +46,7 @@ public class signInPage {
     public signInPage() throws IOException, ParseException {
     }
 
-    basePage BasePage = new basePage();
+    clientPlatformBasePage clientPlatformBasePage = new clientPlatformBasePage();
     projectsPage ProjectsPage = new projectsPage();
 
 
@@ -71,8 +71,15 @@ public class signInPage {
     public signInPage clearUsername()
     {
         $(emailInput).shouldBe(editable);
-        emailInput.sendKeys(COMMAND + "A");
-        emailInput.sendKeys(BACK_SPACE);
+        if(!emailInput.getValue().isEmpty()) {
+            emailInput.sendKeys(COMMAND + "A");
+            emailInput.sendKeys(BACK_SPACE);
+            System.out.println("Username has been cleared out.");
+        }
+        else
+        {
+            System.out.println("Username was already blank.");
+        }
         return this;
     }
 
@@ -145,7 +152,7 @@ public class signInPage {
 
     public signInPage verifyLoginStandard() throws InterruptedException {
 
-        $(BasePage.projectsLink).shouldBe(editable);
+        $(clientPlatformBasePage.projectsLink).shouldBe(editable);
         $(ProjectsPage.lastProject).shouldBe(visible);
         System.out.println(WebDriverRunner.url());
         return this;

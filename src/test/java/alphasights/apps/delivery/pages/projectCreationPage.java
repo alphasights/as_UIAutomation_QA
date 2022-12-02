@@ -16,7 +16,7 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 import static org.openqa.selenium.Keys.*;
 
-public class projectCreationPage extends basePage {
+public class projectCreationPage extends deliveryBasePage {
     //region Variable
     private String projectDetails = "/Users/user/Documents/GitHub/as_UIAutomation_QA/resources/projectDetails.json";
     JSONParser jsonParser = new JSONParser();
@@ -29,9 +29,9 @@ public class projectCreationPage extends basePage {
     public String clientAccount = (String)jsonObject.get("clientAccount");
     Faker faker = new Faker();
 
-    String externalTitleVal = faker.rickAndMorty().character() + " Company";
-    String excludedCompaniesVal = faker.rickAndMorty().location() + " Company";
-    String codeNameVal = externalTitleVal + " " + excludedCompaniesVal + " Test";
+    String externalTitleVal = faker.backToTheFuture().character() + " Test Company";
+    String excludedCompaniesVal = faker.backToTheFuture().character() + " Company";
+    String codeNameVal = faker.backToTheFuture().character() + " Code Name Test Company";
     //endregion
 
     //region Locators

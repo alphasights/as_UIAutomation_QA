@@ -1,23 +1,20 @@
 package alphasights.apps.pistachio.pages;
 
-import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
-import com.codeborne.selenide.SelenideWait;
-import org.openqa.selenium.By;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.testng.Assert;
+import org.openqa.selenium.By;
 
 import java.io.FileReader;
 import java.io.IOException;
 import java.time.Duration;
 
-import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Condition.enabled;
+import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selenide.$;
 
-public class clientAccountsPage extends basePage{
+public class clientAccountsPage extends pistachioBasePage{
     //region Variable
     public String clientAccountsUrl = "https://qa-pistachio.alphasights.com/client/accounts";
     public String currentKeyword = null;

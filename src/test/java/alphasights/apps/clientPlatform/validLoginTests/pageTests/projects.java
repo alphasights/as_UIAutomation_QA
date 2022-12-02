@@ -1,12 +1,12 @@
 package alphasights.apps.clientPlatform.validLoginTests.pageTests;
 
-import alphasights.apps.clientPlatform.validLoginTests.validLoginTests;
+import alphasights.apps.clientPlatform.validLoginTests.validLogins;
 import org.json.simple.parser.ParseException;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
 
-public class projectsTests extends validLoginTests {
+public class projects extends validLogins {
 
     @Test(groups = "Standard Login")
     public void viewAProject()
@@ -15,6 +15,6 @@ public class projectsTests extends validLoginTests {
     }
 
 
-    public projectsTests() throws IOException, ParseException {
+    public projects() throws IOException, ParseException {
     }
 }

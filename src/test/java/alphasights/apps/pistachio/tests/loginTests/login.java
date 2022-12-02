@@ -1,22 +1,22 @@
 package alphasights.apps.pistachio.tests.loginTests;
 
-import alphasights.apps.delivery.pages.dashboardPage;
+import alphasights.apps.delivery.pages.deliveryBasePage;
 import alphasights.apps.utilities.googleAuth;
 import org.json.simple.parser.ParseException;
 import org.testng.annotations.BeforeGroups;
 
 import java.io.IOException;
 
-public class loginTests extends googleAuth{
+public class login extends googleAuth{
 
-    dashboardPage dashboardPage = new dashboardPage();
+    deliveryBasePage DeliveryBasePage = new deliveryBasePage();
 
     @BeforeGroups(groups = {"Pistachio"})
     public void navigateToPTO()
     {
-        dashboardPage
+        DeliveryBasePage
                 .clickUserNavDropdown();
     }
-    public loginTests() throws IOException, ParseException {
+    public login() throws IOException, ParseException {
     }
 }

@@ -10,9 +10,9 @@ import java.io.IOException;
 
 import static alphasights.apps.delivery.pages.NPSOptions.ON_COMPLETION;
 
-public class whiteboardAndProjectsTests extends googleAuth {
+public class whiteboardAndProjects extends googleAuth {
 
-    basePage BasePage = new basePage();
+    deliveryBasePage BasePage = new deliveryBasePage();
     dashboardPage DashboardPage = new dashboardPage();
     projectCreationPage ProjectCreationPage = new projectCreationPage();
     projectDetailsPage ProjectDetailsPage = new projectDetailsPage();
@@ -22,7 +22,7 @@ public class whiteboardAndProjectsTests extends googleAuth {
 
     //endregion
 
-    @Test (groups = {"Delivery"})
+    @Test (groups = {"Delivery", "Delivery_Proj_Setup"})
     public void createProjectStandard()
     {
         DashboardPage
@@ -34,6 +34,6 @@ public class whiteboardAndProjectsTests extends googleAuth {
                 .verifyProjectCreated();
     }
 
-    public whiteboardAndProjectsTests() throws IOException, ParseException {
+    public whiteboardAndProjects() throws IOException, ParseException {
     }
 }

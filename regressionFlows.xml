@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Full Regression Test Suite">
+    <test name = "Delivery - Test Suite">
+        <packages>
+            <package name="alphasights.apps.delivery.tests"/>
+        </packages>
+    </test>
+    <test name = "Client Platform - Standard Login Test Suite">
+    <packages>
+        <package name="alphasights.apps.clientPlatform.validLoginTests" />
+        <package name="alphasights.apps.clientPlatform.originalFlows"/>
+    </packages>
+    </test>
+</suite>

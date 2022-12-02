@@ -1,6 +1,6 @@
 package alphasights.apps.clientPlatform.validLoginTests;
 
-import alphasights.apps.clientPlatform.pages.basePage;
+import alphasights.apps.clientPlatform.pages.clientPlatformBasePage;
 import alphasights.apps.clientPlatform.pages.signInPage;
 import alphasights.apps.utilities.googleAuth;
 import org.json.simple.JSONObject;
@@ -12,7 +12,7 @@ import org.testng.annotations.BeforeGroups;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class validLoginTests extends googleAuth {
+public class validLogins extends googleAuth {
     //region Variables
     //Setup clientPlatform userDetails
     private String userDetails = "/Users/user/Documents/GitHub/as_UIAutomation_QA/resources/userDetails.json";
@@ -27,7 +27,7 @@ public class validLoginTests extends googleAuth {
     //endregion
 
     signInPage SignInPage = new signInPage();
-    basePage BasePage = new basePage();
+    clientPlatformBasePage ClientPlatformBasePage = new clientPlatformBasePage();
 
 
     @BeforeGroups("Standard Login")
@@ -41,13 +41,13 @@ public class validLoginTests extends googleAuth {
 
     @AfterSuite(groups = {"Standard Login"})
     public void clientPlatformLogout(){
-        BasePage
+        ClientPlatformBasePage
                 .clickUserNavDropdown()
                 .clickSignOut();
     }
 
 
-    public validLoginTests() throws IOException, ParseException {
+    public validLogins() throws IOException, ParseException {
     }
 
 }
