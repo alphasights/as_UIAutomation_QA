@@ -72,7 +72,7 @@ public class projectDetailsPage extends pistachioBasePage{
     //region Methods
     public projectDetailsPage clickEditProject()
     {
-        $(editProject).shouldBe(editable);
+        $(editProject).shouldBe(enabled);
         editProject.click();
         return this;
     }

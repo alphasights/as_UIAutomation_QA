@@ -137,7 +137,7 @@ public class flowANewClient extends login {
     }
 
     @AfterMethod(groups = {"New Client Contact"})
-    public void deleteClientContact() throws SQLException, ClassNotFoundException {
+    public void deleteClientContact() throws SQLException, ClassNotFoundException{
         ClientContactsPage
                 .clickDeleteContact()
                 .confirmDeleteContact()

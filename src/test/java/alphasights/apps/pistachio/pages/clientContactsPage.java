@@ -11,8 +11,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$x;
+import static com.codeborne.selenide.Selenide.*;
 
 public class clientContactsPage extends pistachioBasePage{
     //region Variables
@@ -186,7 +185,7 @@ public class clientContactsPage extends pistachioBasePage{
 
     public clientContactsPage verifyPortalInviteConfirmation()
     {
-        $(portalInviteConfirmation).shouldBe(visible);
+        $(portalInviteConfirmation).shouldBe(editable);
         return this;
     }
 
@@ -197,8 +196,7 @@ public class clientContactsPage extends pistachioBasePage{
         return this;
     }
 
-    public clientContactsPage confirmDeleteContact()
-    {
+    public clientContactsPage confirmDeleteContact(){
         Selenide.switchTo().alert().accept();
         return this;
     }
