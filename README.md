@@ -74,7 +74,7 @@ In order to handle a lot of configuration details that are passed locally to you
 
 ## Tips, Tricks & Troubleshooting
 ### Ensure resources folder setup correctly
-See [Set Up your resources folder locally](&text=Type%20a%20new%20name%20in%20the%20Name%20field)
+See [Set Up your resources folder locally]([&text=Type%20a%20new%20name%20in%20the%20Name%20field](https://github.com/alphasights/as_UIAutomation_QA/blob/master/README.md#set-up-your-resources-folder-locally))
 #### System name issue
 Potentially the dynamic paths within various packages in this project may not work for you.  This would most likely be due to your system having had a custom hostname added tyo your Mac.  To resolve this issue you can do 1 of 2 things.  You can change general references to User in paths to match your custom hostname, or you could [change you computer's name](https://support.apple.com/guide/mac-help/change-computers-local-hostname-mac-mchlp2322/mac#:~:text=You%20can%20view%20and%20change,may%20need%20to%20scroll%20down.).
 
