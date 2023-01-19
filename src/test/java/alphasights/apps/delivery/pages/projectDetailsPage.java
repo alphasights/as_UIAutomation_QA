@@ -72,7 +72,7 @@ public class projectDetailsPage extends pistachioBasePage{
     //region Methods
     public projectDetailsPage clickEditProject()
     {
-        $(editProject).shouldBe(enabled);
+        $(editProject).shouldBe(interactable);
         editProject.click();
         return this;
     }
@@ -129,7 +129,7 @@ public class projectDetailsPage extends pistachioBasePage{
 
     public projectDetailsPage addNewClientContact()
     {
-        $(newContact.shouldBe(editable));
+        $(newContact.shouldBe(interactable));
         clickNewContact();
         $(clientContactNameInput).shouldBe(editable);
         clientContactNameInput.sendKeys(clientContactName);

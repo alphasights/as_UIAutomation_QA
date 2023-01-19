@@ -6,8 +6,6 @@ Ballure-results/0ce1f7e2-9dd9-4c7a-9e24-49a5b12c0a6f-container.json,6/5/65f8030
 :
 
 .gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
-=
-browsers.json,9/2/92003931a0f2d71def19d89b50225642b4bdf014
 4
 mvnw,5/d/5d837c4ed85ecaaf932c506e80ff5d7b9f3d590d
 8
@@ -20,8 +18,6 @@ r
 Bsrc/test/java/alphasights/apps/pistachio/pages/pistachioPages.java,f/5/f5f2ff5773aa0ed3f3e468839ccd04b8cd50688b
 m
 =src/test/java/alphasights/apps/delivery/pages/NPSOptions.java,5/a/5aa05d3e143485f6b23d8bb020082da66c926267
-†
-Vsrc/test/java/alphasights/apps/clientPlatform/invalidLoginTests/signInHelpButtons.java,f/3/f3782493388f344e409b4388af0d65657eeb957d
 w
 Gsrc/test/java/alphasights/apps/delivery/pages/ExternalDescriptions.java,d/6/d6497cf34ef6bb1ccf5918d498ba006cd0f49345
 |
@@ -32,5 +28,17 @@ Rsrc/test/java/alphasights/apps/clientPlatform/originalFlows/flowDSigninAndOut.j
 Ssrc/test/java/alphasights/apps/clientPlatform/originalFlows/flowCMyPreferences.java,0/4/0495da83bf8603dc217e9d83c0847e9cb295aee8
 ƒ
 Ssrc/test/java/alphasights/apps/clientPlatform/originalFlows/flowBPasswordLinks.java,0/c/0c0005df2238cb25acc71801f4687625012b17fc
-}
-Msrc/test/java/alphasights/apps/clientPlatform/invalidLoginTests/fakeUser.java,2/6/262623909aa4ade711a467757604d5eac37b0d3e
+v
+Fsrc/test/java/alphasights/apps/pistachio/pages/clientEntitiesPage.java,d/b/dbe0c99f94316e0a12cac068cc06d34674d841ce
+t
+Dsrc/test/java/alphasights/apps/pistachio/pages/clientGlobalPage.java,e/f/efb57c1fd77d15aaed5032683650a5233a390071
+u
+Esrc/test/java/alphasights/apps/pistachio/pages/pistachioBasePage.java,4/a/4a66255e5ceba96331d28347ee672da2815c2513
+u
+Esrc/test/java/alphasights/apps/clientPlatform/pages/projectsPage.java,1/5/154049ad02327298f8d8e5746ec4285c54f4f521
+…
+Usrc/test/java/alphasights/apps/clientPlatform/validLoginTests/pageTests/projects.java,5/3/53e9a06885d601ca7e392cf8efc7c0b46aed15f1
+
+Osrc/test/java/alphasights/apps/clientPlatform/pages/clientPlatformBasePage.java,7/7/77966baa5f3876633679f322d1f16eaeba5fdf99
+W
+'zbot_1671822135323/conf/zbot.properties,9/2/92593025ca2fcb42708175d7f919745809baec0c

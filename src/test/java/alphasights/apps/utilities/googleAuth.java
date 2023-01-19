@@ -8,8 +8,7 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeGroups;
+import org.testng.annotations.*;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -28,7 +27,7 @@ public class googleAuth {
     //region Setup google userDetails
 
     //region Username
-    private String userDetails = "/Users/user/Documents/GitHub/as_UIAutomation_QA/resources/userDetails.json";
+    private final String userDetails = "/Users/user/Documents/GitHub/as_UIAutomation_QA/resources/userDetails.json";
     JSONParser jsonParser = new JSONParser();
     Object obj = jsonParser.parse(new FileReader(userDetails));
     JSONObject jsonObject = (JSONObject) obj;
@@ -57,6 +56,7 @@ public class googleAuth {
     public URL stagingDeliveryUrl = new URL("https://delivery-eng-playground.alphasights.com/dashboard");
     public URL stagingClientPlatformUrl = new URL("https://portal-staging.alphasights.com/sign-in");
     public URL companiesDeliveryUrl = new URL("https://companies-delivery.alphasights.com/");
+    public URL stagingNewProjectUrl = new URL("https://delivery-eng-playground.alphasights.com/next/projects/new");
     //endregion
 
     //region Production
@@ -74,9 +74,9 @@ public class googleAuth {
     public SelenideElement googlePasswordInput = $x("//input[@name ='password']");
 
     
-    public googleAuth environmentSelector(alphasightsEnvironments asEnvironement)
+    public googleAuth environmentSelector(alphasightsEnvironments asEnvironment)
     {
-        switch(asEnvironement)
+        switch(asEnvironment)
         {
             case QA_PISTACHIO:
                 testingURL = qaPistachioURL;
@@ -96,6 +96,9 @@ public class googleAuth {
             case STAGING_CLIENT_PLATFORM:
                 testingURL = stagingClientPlatformUrl;
                 break;
+            case STAGING_REDELIVERY_NEW_PROJS:
+                testingURL = stagingNewProjectUrl;
+                    break;
             case PROD_PISTACHIO:
                 testingURL = prodPistachioURL;
                 break;
@@ -128,18 +131,40 @@ public class googleAuth {
         googleNextBtn.click();
     }
 
-
-    public static void config()
+    @BeforeTest(groups = "setup")
+    @Parameters("browser")
+    public static void config(@Optional String browser)
     {
-        Configuration.browser = "chrome";
+        if(browser == null)
+        {
+            System.out.println("No Browser chosen.  Defaulting to Chrome.");
+            Configuration.browser = "chrome";
+        } else if (browser.equalsIgnoreCase("chrome")){
+
+            Configuration.browser = "chrome";
+        }
+        else if (browser.equalsIgnoreCase("firefox"))
+        {
+            Configuration.browser = "firefox";
+        } else if (browser.equalsIgnoreCase("safari")) {
+            Configuration.browser = "safari";
+        } else if (browser.equalsIgnoreCase("edge")) {
+            Configuration.browser = "edge";
+        } else if (browser.equalsIgnoreCase("ie")) {
+            Configuration.browser = "ie";
+        }
+        else{
+            System.out.println("Invalid Browser chosen.  Defaulting to Chrome.");
+            Configuration.browser = "chrome";
+        }
+
         Configuration.browserSize ="1366x768";
         Configuration.timeout = 15000;
         SelenideLogger.addListener("allure", new AllureSelenide());
     }
 
-    @BeforeGroups(groups = {"Pistachio", "ptoSetup"})
-    public void setupPistachio() throws InterruptedException {
-        config();
+    @BeforeGroups(groups = {"Pistachio", "ptoSetup", "setup"})
+    public void setupPistachio() {
         environmentSelector(QA_PISTACHIO);
         open(testingURL);
         enterUserEmail(googleUserName);
@@ -147,9 +172,8 @@ public class googleAuth {
     }
 
 
-    @BeforeGroups(groups = {"ClientPlatform", "clientPlatformSetup"})
-    public void setUpClientPlatform() throws InterruptedException {
-        config();
+    @BeforeGroups(groups = {"ClientPlatform", "clientPlatformSetup", "setup"})
+    public void setUpClientPlatform() {
         environmentSelector(QA_CLIENT_PLATFORM);
         open(testingURL);
         enterUserEmail(googleUserName);
@@ -159,10 +183,17 @@ public class googleAuth {
 
 
 
-    @BeforeGroups(groups = {"Delivery", "deliverySetup"})
-    public void setUpDelivery() throws InterruptedException {
-        config();
+    @BeforeGroups(groups = {"Delivery", "deliverySetup", "setup"})
+    public void setUpDelivery() {
         environmentSelector(QA_DELIVERY);
+        open(testingURL);
+        enterUserEmail(googleUserName);
+        enterUserPassword(googlePassword);
+    }
+
+    @BeforeGroups(groups = {"New Proj Creation", "setup"})
+    public void setUpNewProjCreation(){
+        environmentSelector(STAGING_REDELIVERY_NEW_PROJS);
         open(testingURL);
         enterUserEmail(googleUserName);
         enterUserPassword(googlePassword);
@@ -172,12 +203,10 @@ public class googleAuth {
     public void endSession()
     {
             Selenide.clearBrowserCookies();
+            Selenide.closeWebDriver();
     }
 
     public googleAuth() throws IOException, ParseException {
     }
-
-        public void googleAuth() throws IOException, ParseException {
-        }
 }
 

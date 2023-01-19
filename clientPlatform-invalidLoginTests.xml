@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Invalid Client Platform Login">
-    <test name="Client Platform - Invalid email input">
-        <classes>
-            <class name="alphasights.apps.clientPlatform.invalidLoginTests.invalidLogins"/>
-        </classes>
+<suite name="Invalid Client Platform Login" thread-count="3" >
+    <test name="Client Platform - Invalid Client Login - Chrome" parallel="tests" thread-count="1">
+        <parameter name="browser" value="Chrome"/>
+        <packages>
+                <package name="alphasights.apps.clientPlatform.invalidLoginTests"/>
+        </packages>
     </test>
-    <test name="Client Platform - Fake User Test Suite">
-        <classes>
-            <class name="alphasights.apps.clientPlatform.invalidLoginTests.fakeUser"/>
-        </classes>
+    <test name="Client Platform - Invalid Client Login - Firefox" parallel="tests" thread-count="1">
+        <parameter name="browser" value="Firefox"/>
+        <packages>
+            <package name="alphasights.apps.clientPlatform.invalidLoginTests"/>
+        </packages>
     </test>
-    <test name ="Client Platform - Sign In Help Button Test Suite">
-        <classes>
-            <class name="alphasights.apps.clientPlatform.invalidLoginTests.signInHelpButtons"/>
-        </classes>
+    <test name="Client Platform - Invalid Client Login - Safari" parallel="tests" thread-count="1">
+        <parameter name="browser" value="Safari"/>
+        <packages>
+            <package name="alphasights.apps.clientPlatform.invalidLoginTests"/>
+        </packages>
     </test>
 </suite>

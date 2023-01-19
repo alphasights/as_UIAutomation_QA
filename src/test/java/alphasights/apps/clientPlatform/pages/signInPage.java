@@ -73,7 +73,7 @@ public class signInPage {
         $(emailInput).shouldBe(editable);
         if(!emailInput.getValue().isEmpty()) {
             emailInput.sendKeys(COMMAND + "A");
-            emailInput.sendKeys(BACK_SPACE);
+            emailInput.sendKeys(DELETE);
             System.out.println("Username has been cleared out.");
         }
         else

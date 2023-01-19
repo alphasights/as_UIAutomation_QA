@@ -191,7 +191,7 @@ public class clientContactsPage extends pistachioBasePage{
 
     public clientContactsPage clickDeleteContact()
     {
-        $(deleteButton).shouldBe(enabled);
+        $(deleteButton).shouldBe(editable);
         deleteButton.click();
         return this;
     }

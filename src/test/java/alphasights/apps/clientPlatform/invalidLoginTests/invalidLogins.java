@@ -2,14 +2,13 @@ package alphasights.apps.clientPlatform.invalidLoginTests;
 
 import alphasights.apps.clientPlatform.pages.clientPlatformBasePage;
 import alphasights.apps.clientPlatform.pages.signInPage;
-import alphasights.apps.utilities.googleAuth;
 import org.json.simple.parser.ParseException;
 import org.testng.annotations.*;
 import org.testng.annotations.DataProvider;
 
 import java.io.IOException;
 
-public class invalidLogins extends googleAuth {
+public class invalidLogins extends baseInvalidLogin {
 
 
         signInPage SignInPage = new signInPage();
@@ -36,8 +35,7 @@ public class invalidLogins extends googleAuth {
         @AfterMethod(groups = {"ClientPlatform", "clientInvalidLogin", "Not Real User"})
         public void refreshBrowser(){
             SignInPage
-                    .refreshPage()
-                    .verifyUsernameInputAvailable();
+                    .refreshPage();
         }
 
     public invalidLogins() throws IOException, ParseException {
