@@ -80,7 +80,7 @@ Potentially the dynamic paths within various packages in this project may not wo
 
 ### AWS VPN IPv6 Issue & resolution
 Various Internet Service Providers such as Verizon Fios have been rolling out IPv6 to their customers.  Currently, AWS VPN, which we use to access the UI Automation tester account credentials (for Google authentication) does not fully support IPv6: [Read Here](https://docs.aws.amazon.com/vpn/latest/s2svpn/ipv4-ipv6.html).  To resolve this, go to Advanced wifi settings and change settings to match this: 
-![Advanced wifi settings](https://drive.google.com/file/d/1Z0zYbIzPpCQDv_NRVv_3Wlfdvb8cw42k/view?usp=share_link)
+![Advanced wifi settings]([https://drive.google.com/file/d/1Z0zYbIzPpCQDv_NRVv_3Wlfdvb8cw42k/view?usp=share_link](https://drive.google.com/file/d/1Z0zYbIzPpCQDv_NRVv_3Wlfdvb8cw42k/view?usp=sharing))
 
 
 
