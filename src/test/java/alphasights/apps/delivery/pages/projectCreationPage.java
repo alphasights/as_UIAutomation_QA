@@ -157,8 +157,6 @@ public class projectCreationPage extends deliveryBasePage {
         $(alphaCompanyAddedConfirmationMsg).shouldHave(partialText(company + " was added"));
         $(alphaCompaniesClosingIcon).shouldBe(enabled);
         alphaCompaniesClosingIcon.click();
-        $(projectMatchesDetectedModal).shouldBe(visible);
-        projectMatchesModalClose.click();
         return this;
     }
 

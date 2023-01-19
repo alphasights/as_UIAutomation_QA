@@ -100,6 +100,15 @@ public class flowANewClient extends login {
     @Test(groups = {"Delivery", "New Client Contact", "Delivery_new_contact" })
     public void createClientContact_Delivery_SendInviteFromPTO() throws InterruptedException {
         clientContactCreation_Delivery();
+        DeliveryBasePage
+                .clickUserNavDropdown();
+        PistachioBasePage
+                .clickMainLink(CLIENTS)
+                .clickSubNavLink(CLIENT_CONTACTS);
+        ClientContactsPage
+                .pageLoaded()
+                .searchContact("Automation Tester A")
+                .selectSearchedContact("Automation Tester A");
         sendPortalInvitation_PTO();
     }
 

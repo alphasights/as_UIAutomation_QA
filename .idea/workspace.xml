@@ -4,11 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3a9f36c8-cb73-4dac-9098-1c158688f90d" name="Changes" comment="Added COMPANIES_DELIVERY to enum and the url for it in googleAuth.">
+    <list default="true" id="3a9f36c8-cb73-4dac-9098-1c158688f90d" name="Changes" comment="Updates including flows etc.">
+      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/invalidLoginTests/baseInvalidLogin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/redelivery/pages/quickLaunchNewProj.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/redelivery/tests/newProjectCreation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/browsers.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientPlatform-invalidLoginTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/clientPlatform-invalidLoginTests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/regressionFlows.xml" beforeDir="false" afterPath="$PROJECT_DIR$/regressionFlows.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/invalidLoginTests/fakeUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/invalidLoginTests/fakeUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/invalidLoginTests/invalidLogins.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/invalidLoginTests/invalidLogins.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/invalidLoginTests/signInHelpButtons.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/invalidLoginTests/signInHelpButtons.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/originalFlows/flowANewClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/originalFlows/flowANewClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/pages/signInPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/pages/signInPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/pages/projectCreationPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/pages/projectCreationPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/pages/projectDetailsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/pages/projectDetailsPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/pistachio/pages/clientContactsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/pistachio/pages/clientContactsPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/utilities/alphasightsEnvironments.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/utilities/alphasightsEnvironments.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/utilities/googleAuth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/utilities/googleAuth.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,9 +33,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Tag Library Descriptor" />
         <option value="Enum" />
         <option value="Class" />
-        <option value="Tag Library Descriptor" />
       </list>
     </option>
   </component>
@@ -68,32 +83,35 @@
     <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2GMY4dNPBCKwijWTGlE6hS5vvXk" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
-    &quot;ToolWindowBuild.ShowToolbar&quot;: &quot;false&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/user/Documents/GitHub/as_UIAutomation_QA/resources&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2735632&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;page.object.configurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "ToolWindowBuild.ShowToolbar": "false",
+    "WebServerToolWindowFactoryState": "false",
+    "full.screen.before.presentation.mode": "false",
+    "last_opened_file_path": "/Users/user/Documents/GitHub/as_UIAutomation_QA/resources",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2735632",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "configurable.group.appearance"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/resources" />
@@ -111,46 +129,11 @@
       <recent name="alphasights.apps.pistachio.pages" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG./Users/user/Documents/GitHub/as_UIAutomation_QA/clientPlatform-invalidLoginTests.xml">
+  <component name="RunManager" selected="TestNG.newProjectCreation.negativeTest1">
     <configuration name="/Users/user/Documents/GitHub/as_UIAutomation_QA/clientPlatform-invalidLoginTests.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="as_UIAutomation_QA" />
       <option name="SUITE_NAME" value="$PROJECT_DIR$/clientPlatform-invalidLoginTests.xml" />
       <option name="TEST_OBJECT" value="SUITE" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="flowANewClient" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="as_UIAutomation_QA" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="alphasights.apps.clientPlatform.originalFlows.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="alphasights.apps.clientPlatform.originalFlows" />
-      <option name="MAIN_CLASS_NAME" value="alphasights.apps.clientPlatform.originalFlows.flowANewClient" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="flowANewClient.createClientContact_Delivery_SendInviteFromDelivery" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="as_UIAutomation_QA" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="alphasights.apps.clientPlatform.originalFlows.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="alphasights.apps.clientPlatform.originalFlows" />
-      <option name="MAIN_CLASS_NAME" value="alphasights.apps.clientPlatform.originalFlows.flowANewClient" />
-      <option name="METHOD_NAME" value="createClientContact_Delivery_SendInviteFromDelivery" />
-      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
@@ -193,13 +176,48 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="newProjectCreation.negativeTest1" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="as_UIAutomation_QA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="alphasights.apps.redelivery.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="alphasights.apps.delivery.tests" />
+      <option name="MAIN_CLASS_NAME" value="alphasights.apps.redelivery.tests.newProjectCreation" />
+      <option name="METHOD_NAME" value="negativeTest1" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="signInHelpButtons" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="as_UIAutomation_QA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="alphasights.apps.clientPlatform.invalidLoginTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="alphasights.apps.clientPlatform.invalidLoginTests" />
+      <option name="MAIN_CLASS_NAME" value="alphasights.apps.clientPlatform.invalidLoginTests.signInHelpButtons" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.newProjectCreation.negativeTest1" />
         <item itemvalue="TestNG./Users/user/Documents/GitHub/as_UIAutomation_QA/clientPlatform-invalidLoginTests.xml" />
-        <item itemvalue="TestNG.flowANewClient" />
         <item itemvalue="TestNG.flowANewClient.createClientContact_Delivery_SendInviteFromPTO" />
         <item itemvalue="TestNG.flowANewClient.createClientContact_PTO" />
-        <item itemvalue="TestNG.flowANewClient.createClientContact_Delivery_SendInviteFromDelivery" />
+        <item itemvalue="TestNG.signInHelpButtons" />
       </list>
     </recent_temporary>
   </component>
@@ -228,7 +246,11 @@
       <workItem from="1667917243751" duration="20312000" />
       <workItem from="1668119797976" duration="62953000" />
       <workItem from="1668622344420" duration="114236000" />
-      <workItem from="1669987715369" duration="32773000" />
+      <workItem from="1669987715369" duration="51259000" />
+      <workItem from="1670617577794" duration="1818000" />
+      <workItem from="1671038111032" duration="39796000" />
+      <workItem from="1672859162147" duration="14315000" />
+      <workItem from="1673619995561" duration="11726000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit and push">
       <created>1667401323964</created>
@@ -272,7 +294,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670013855378</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Updates including flows etc.">
+      <created>1670427930174</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1670427930175</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -314,7 +343,8 @@
     <MESSAGE value="Added elemnts and methods on clientContactsPage to support Portal Invitation handling and verification.  Altered all apps' base pages—prepending the app names. Created clientPlatform-invalidLoginTests.xml to handle invalid login test suite.  Added database cleanup for new client contact creation scripts in flowANewClient.  Added some groups to the googleAuth class.  Added DataProvider to invalidLogins to handle parameterized test data.  Added org.postgresql dependency to pom.xml to handle database updates and quesries on test data.  Added some elements and methods to projectDetailsPage for handling editing projects and new client contact actions.  Created regressionFlows.xml to manage regression testing, including our original flows.  Added a conditional for handling the clearUsername() method on signInPage." />
     <MESSAGE value="Added elements and methods on clientContactsPage to support Portal Invitation handling and verification.  Altered all apps' base pages—prepending the app names. Created clientPlatform-invalidLoginTests.xml to handle invalid login test suite.  Added database cleanup for new client contact creation scripts in flowANewClient.  Added some groups to the googleAuth class.  Added DataProvider to invalidLogins to handle parameterized test data.  Added org.postgresql dependency to pom.xml to handle database updates and queries on test data.  Added some elements and methods to projectDetailsPage for handling editing projects and new client contact actions.  Created regressionFlows.xml to manage regression testing, including our original flows.  Added a conditional for handling the clearUsername() method on signInPage." />
     <MESSAGE value="Added COMPANIES_DELIVERY to enum and the url for it in googleAuth." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added COMPANIES_DELIVERY to enum and the url for it in googleAuth." />
+    <MESSAGE value="Updates including flows etc." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updates including flows etc." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
