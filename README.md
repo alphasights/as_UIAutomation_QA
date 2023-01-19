@@ -79,7 +79,7 @@ See [Set Up your resources folder locally](#Set Up your resources folder locally
 Potentially the dynamic paths within various packages in this project may not work for you.  This would most likely be due to your system having had a custom hostname added tyo your Mac.  To resolve this issue you can do 1 of 2 things.  You can change general references to User in paths to match your custom hostname, or you could [change you computer's name](https://support.apple.com/guide/mac-help/change-computers-local-hostname-mac-mchlp2322/mac#:~:text=You%20can%20view%20and%20change,may%20need%20to%20scroll%20down.)&text=Type%20a%20new%20name%20in%20the%20Name%20field.).
 
 ### AWS VPN IPv6 Issue & resolution
-Various Internet Service Providers such as Verizon Fios have been rolling out IPv6 to their customers.  Currently, AWS VPN, which we use to access the UI Automation tester account credentials (for Google authentication) does not fully support IPv6: [Read Here](https://docs.aws.amazon.com/vpn/latest/s2svpn/ipv4-ipv6.html).  To resolve this, go to Advanced wifi settings and change settings to match this:![Advanced wifi settings](https://alphasights.enterprise.slack.com/files/U0KQ31918/F04DZ19G8EB/image.png)
+Various Internet Service Providers such as Verizon Fios have been rolling out IPv6 to their customers.  Currently, AWS VPN, which we use to access the UI Automation tester account credentials (for Google authentication) does not fully support IPv6: [Read Here](https://docs.aws.amazon.com/vpn/latest/s2svpn/ipv4-ipv6.html).  To resolve this, go to Advanced wifi settings and change settings to match this:![Advanced wifi settings](https://drive.google.com/file/d/1Z0zYbIzPpCQDv_NRVv_3Wlfdvb8cw42k/view?usp=share_link)
 
 
 
