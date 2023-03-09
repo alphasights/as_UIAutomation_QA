@@ -1,7 +1,6 @@
 package alphasights.apps.delivery.pages;
 
 
-import alphasights.apps.pistachio.pages.pistachioBasePage;
 import com.codeborne.selenide.SelenideElement;
 
 import java.time.Duration;
@@ -11,12 +10,12 @@ import static com.codeborne.selenide.Condition.enabled;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
 
-public class dashboardPage extends pistachioBasePage {
+public class dashboardPage extends deliveryBasePage {
     //region Variable
     //endregion
 
     //region Locators
-    public SelenideElement newProjectButton = $x("//div[@class='dashboard__header-content']//a[contains(text(),'New Project')]");
+    public SelenideElement newProjectBtn = $("a.dashboard__header-button.dashboard__header-button--new-project.ember-view");
     //endregion
 
     //region Methods
@@ -26,10 +25,10 @@ public class dashboardPage extends pistachioBasePage {
         return this;
     }
 
-    public dashboardPage clickNewProject()
+    public dashboardPage clickNewProjectBtn()
     {
-        $(newProjectButton).should(enabled, Duration.ofSeconds(10));
-        newProjectButton.click();
+        $(newProjectBtn).should(enabled, Duration.ofSeconds(10));
+        newProjectBtn.click();
         return this;
     }
     //endregion
