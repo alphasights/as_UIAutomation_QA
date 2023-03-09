@@ -79,7 +79,19 @@ See [Set Up your resources folder locally](https://github.com/alphasights/as_UIA
 Potentially the dynamic paths within various packages in this project may not work for you.  This would most likely be due to your system having had a custom hostname added tyo your Mac.  To resolve this issue you can do 1 of 2 things.  You can change general references to User in paths to match your custom hostname, or you could [change you computer's name](https://support.apple.com/guide/mac-help/change-computers-local-hostname-mac-mchlp2322/mac#:~:text=You%20can%20view%20and%20change,may%20need%20to%20scroll%20down.).
 
 ### AWS VPN IPv6 Issue & resolution
-Various Internet Service Providers such as Verizon Fios have been rolling out IPv6 to their customers.  Currently, AWS VPN, which we use to access the UI Automation tester account credentials (for Google authentication) does not fully support IPv6: [Read Here](https://docs.aws.amazon.com/vpn/latest/s2svpn/ipv4-ipv6.html).  To resolve this, go to Advanced wifi settings and change the Configure IPv6 setting to Link-local only
+Various Internet Service Providers such as Verizon Fios have been rolling out IPv6 to their customers.  Currently, AWS VPN, which we use to access the UI Automation tester account credentials (for Google authentication) does not fully support IPv6: [Read Here](https://docs.aws.amazon.com/vpn/latest/s2svpn/ipv4-ipv6.html).  
+To resolve this (Mac):
+1. Go to wifi icon
+![This is an image](https://drive.google.com/file/d/1EyV4tWSNJffu0i621usAPBOccN9GdXKR/view?usp=share_link)
+2. Click Network Preferences from wifi dropdown
+![This is an image](https://drive.google.com/file/d/1lQpucoIppcNOPdxFt7gLxX9BSBP1YqTk/view?usp=share_link)
+3. Click Advanced... button from Networks window
+![This is an image](https://drive.google.com/file/d/1KMZF4mNxabJADgbeqWvRErCh-kL6iA46/view?usp=share_link)
+4. Click TCP/IP from the Wi-Fi window
+![This is an image](https://drive.google.com/file/d/1Nh8VHEndMkIQbfkON8DPi79MwsKTsbPT/view?usp=share_link)
+5. Select Link-local only on Configure IPv6
+![This is an image](https://drive.google.com/file/d/1xyWN2NvrcPb5Ryr8Yh5SJSPF8aSEHVPS/view?usp=share_link)
+
 
 
 
