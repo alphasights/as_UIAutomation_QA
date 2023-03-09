@@ -23,7 +23,8 @@ public class deliveryBasePage {
 
     //region Sub Nav Links
     public SelenideElement projectSearchLink = $(By.linkText("Project Search"));
-    public SelenideElement newProjectLink = $(By.linkText("New Project"));
+    public SelenideElement newProj_WB = $("a.top-nav-projects__header-link.top-nav-projects__header-link--new.ember-view");
+    public SelenideElement newProjectBtn = $("a.dashboard__header-button.dashboard__header-button--new-project.ember-view");
     public SelenideElement recentProjectsLink = $(By.linkText("Recent Projects"));
     public Collection<SelenideElement> recentlyVisitedProjects = $$("li.top-nav-projects-item.top-nav-projects-item--recent > a");
     public Collection<SelenideElement> starredProjects = $$("li.top-nav-projects-item.top-nav-projects-item--starred > a");
@@ -54,6 +55,12 @@ public class deliveryBasePage {
         Selenide.switchTo().window(1);
         return this;
     }
+    public deliveryBasePage hoverOverWhiteboardAndProjects()
+    {
+        $(whiteboardAndProjectsLink).shouldBe(editable);
+        whiteboardAndProjectsLink.hover();
+        return this;
+    }
 
     public deliveryBasePage clickWhiteboardAndProjects()
     {
@@ -62,11 +69,17 @@ public class deliveryBasePage {
         return this;
     }
 
-    public deliveryBasePage clickNewProject()
+    public deliveryBasePage clickProjectSearch()
     {
-        clickWhiteboardAndProjects();
-        $(newProjectLink).shouldBe(editable);
-        newProjectLink.click();
+        $(projectSearchLink).shouldBe(editable);
+        projectSearchLink.click();
+        return this;
+    }
+
+    public deliveryBasePage clickNewProjectWBLink()
+    {
+        $(newProjectBtn).shouldBe(editable);
+        newProjectBtn.click();
         return this;
     }
 }

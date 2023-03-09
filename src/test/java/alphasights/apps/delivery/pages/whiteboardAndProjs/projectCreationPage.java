@@ -1,5 +1,8 @@
-package alphasights.apps.delivery.pages;
+package alphasights.apps.delivery.pages.whiteboardAndProjs;
 
+import alphasights.apps.delivery.pages.ExternalDescriptions;
+import alphasights.apps.delivery.pages.NPSOptions;
+import alphasights.apps.delivery.pages.deliveryBasePage;
 import com.codeborne.selenide.*;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -27,11 +30,11 @@ public class projectCreationPage extends deliveryBasePage {
     public String clientCategory = (String)jsonObject.get("clientCategory");
     public String clientContact = (String)jsonObject.get("clientContact");
     public String clientAccount = (String)jsonObject.get("clientAccount");
-    Faker faker = new Faker();
+    static Faker faker = new Faker();
 
-    String externalTitleVal = faker.backToTheFuture().character() + " Test Company";
-    String excludedCompaniesVal = faker.backToTheFuture().character() + " Company";
-    String codeNameVal = faker.backToTheFuture().character() + " Code Name Test Company";
+    public static String externalTitleVal = faker.backToTheFuture().character() + " Test Company";
+    public  String excludedCompaniesVal = faker.backToTheFuture().character() + " Company";
+    public  String codeNameVal = faker.backToTheFuture().character() + " Code Name Test Company";
     //endregion
 
     //region Locators
@@ -56,7 +59,7 @@ public class projectCreationPage extends deliveryBasePage {
     public SelenideElement alphaCompaniesSearchIcon = $("i.company-search-icon");
     public SelenideElement alphaCompaniesNextStep = $("button.aui-border.aui-bg-grey-5.aui-border-grey-5.aui-border-solid.aui-text-white.aui-cursor-pointer.aui-py-3.aui-px-4.aui-rounded.aui-text-base.aui-outline-none.aui-font-semibold.aui-text-sub-text.aui-px-6.aui-mt-16");
     public SelenideElement alphaCompaniesAddUnknown = $("div > button.aui-border.aui-bg-transparent.aui-border-transparent.aui-text-dark-1.aui-cursor-pointer.aui-py-3.aui-px-4.aui-outline-none.aui-font-semibold");
-    public SelenideElement clientInstructionsTextArea = $x("//textarea[contains (@placeholder, 'Overall project scope. For example, workforce management solutions or')]");
+    public SelenideElement clientInstructionsTextArea = $("div.project-form-group.aui-fade-in.aui-text-dark-1.aui-mb-6.aui-mt-12.aui-relative > span.aui-block.aui-mt-8.ember-view > div > div.aui-markdown-content.aui-w-full > div > div > div");
     public SelenideElement internalDeliveryGuidelinesTextArea = $x("//textarea[text()='Internal project notes, for example Update the client every day at 6']");
     public SelenideElement clientEntitySelector = $x("//span[text()='Select Entity']");
     public ElementsCollection emberInput = $$("input.ember-power-select-search-input");
@@ -173,7 +176,8 @@ public class projectCreationPage extends deliveryBasePage {
 
     public projectCreationPage focusOnProjectOverviewForm()
     {
-        $(projectOverviewForm).should(editable, Duration.ofSeconds(10));
+        Selenide.switchTo().defaultContent();
+        $(projectOverviewForm).shouldBe(enabled, Duration.ofSeconds(10));
         projectOverviewForm.click();
         return this;
     }
@@ -181,6 +185,7 @@ public class projectCreationPage extends deliveryBasePage {
     public projectCreationPage enterClientInstructions()
     {
         $(clientInstructionsTextArea).shouldBe(editable);
+        clientInstructionsTextArea.click();
         clientInstructionsTextArea.sendKeys(clientInstructions);
         return this;
     }
@@ -336,13 +341,6 @@ public class projectCreationPage extends deliveryBasePage {
         enterCodeName();
         clickProjectAngles();
         enterFirstAngle(angleType, angleName);
-        return this;
-    }
-
-    public projectCreationPage verifyProjectCreated()
-    {
-        $(ProjectDetailsPage.projectExternalTitle).shouldBe(enabled);
-        $(ProjectDetailsPage.projectExternalTitle).shouldHave(text(externalTitleVal));
         return this;
     }
 

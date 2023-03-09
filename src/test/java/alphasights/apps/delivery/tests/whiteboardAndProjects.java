@@ -1,6 +1,8 @@
 package alphasights.apps.delivery.tests;
 
 import alphasights.apps.delivery.pages.*;
+import alphasights.apps.delivery.pages.whiteboardAndProjs.projectCreationPage;
+import alphasights.apps.delivery.pages.whiteboardAndProjs.projectDetailsPage;
 import alphasights.apps.utilities.googleAuth;
 import com.codeborne.selenide.SelenideElement;
 import org.json.simple.parser.ParseException;
@@ -27,10 +29,11 @@ public class whiteboardAndProjects extends googleAuth {
     {
         DashboardPage
                 .pageLoad()
-                .clickNewProject();
+                .clickNewProjectBtn();
         ProjectCreationPage
                 .createProject(ON_COMPLETION, "Alpha Test", "Competitors", "Test Competitor Angle")
-                .clickCreateProjects()
+                .clickCreateProjects();
+        ProjectDetailsPage
                 .verifyProjectCreated();
     }
 

@@ -2,14 +2,13 @@ package alphasights.apps.clientPlatform.originalFlows;
 
 import alphasights.apps.clientPlatform.pages.clientPlatformBasePage;
 import alphasights.apps.clientPlatform.pages.signInPage;
-import alphasights.apps.delivery.pages.dashboardPage;
-import alphasights.apps.delivery.pages.projectCreationPage;
-import alphasights.apps.delivery.pages.projectDetailsPage;
-import alphasights.apps.delivery.pages.deliveryBasePage;
+import alphasights.apps.delivery.pages.*;
+import alphasights.apps.delivery.pages.whiteboardAndProjs.*;
 import alphasights.apps.pistachio.pages.pistachioBasePage;
 import alphasights.apps.pistachio.pages.clientAccountsPage;
 import alphasights.apps.pistachio.pages.clientContactsPage;
 import alphasights.apps.pistachio.tests.loginTests.login;
+import alphasights.apps.utilities.jdbcOperations;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
 import org.json.simple.JSONObject;
@@ -19,10 +18,7 @@ import org.testng.annotations.*;
 
 import java.io.FileReader;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 import static alphasights.apps.delivery.pages.NPSOptions.ON_COMPLETION;
 import static alphasights.apps.pistachio.pages.internalTabNavs.CLIENTS;
@@ -31,6 +27,13 @@ import static alphasights.apps.pistachio.pages.pistachioPages.CLIENT_CONTACTS;
 
 public class flowANewClient extends login {
 
+    //region Variables
+    private final String userDetails = "/Users/user/Documents/GitHub/as_UIAutomation_QA/resources/userDetails.json";
+    JSONParser jsonParser = new JSONParser();
+    Object obj = jsonParser.parse(new FileReader(userDetails));
+    JSONObject jsonObject = (JSONObject) obj;
+    String clientPlatformUsername = (String)jsonObject.get("clientPlatformUsername");
+    String clientPlatformPassword = (String)jsonObject.get("clientPlatformPassword");
     pistachioBasePage PistachioBasePage = new pistachioBasePage();
     deliveryBasePage DeliveryBasePage = new deliveryBasePage();
 
@@ -38,26 +41,15 @@ public class flowANewClient extends login {
     clientContactsPage ClientContactsPage = new clientContactsPage();
     dashboardPage DashboardPage = new dashboardPage();
     projectCreationPage ProjectCreationPage = new projectCreationPage();
+    projectSearchPage ProjectSearchPage = new projectSearchPage();
+    projectSearchResultsPage ProjectSearchResultsPage = new projectSearchResultsPage();
+    projectResearchPage ProjectResearchPage = new projectResearchPage();
     projectDetailsPage ProjectDetailsPage = new projectDetailsPage();
+    projectEditPage ProjectEditPage = new projectEditPage();
     signInPage SignInPage = new signInPage();
     clientPlatformBasePage ClientPlatformBasePage = new clientPlatformBasePage();
-
-    private String userDetails = "/Users/user/Documents/GitHub/as_UIAutomation_QA/resources/userDetails.json";
-    JSONParser jsonParser = new JSONParser();
-    Object obj = jsonParser.parse(new FileReader(userDetails));
-    JSONObject jsonObject = (JSONObject) obj;
-    String clientPlatformUsername = (String)jsonObject.get("clientPlatformUsername");
-    String clientPlatformPassword = (String)jsonObject.get("clientPlatformPassword");
-    public String dbURL = "jdbc:postgresql://client-portal-qa-staging-db.alphasights.com:5432/production";
-    public String dbUserId = (String) jsonObject.get("clientPlatformDBUser");
-    public String dbPassword = (String) jsonObject.get("clientPlatformDBPassword");
-    public String deleteProfileDetailsAndInvites =
-            "delete from client_profile_updates\n"+
-                    "where client_profile_id in (select id from client_profiles where email like 'automationtester%');"+
-                    "delete from client_profiles\n" +
-                    "where email like 'automationtester%';\n" +
-                    "delete from invitations\n" +
-                    "where email like 'automationtester%';";
+    jdbcOperations JDBCOperations = new jdbcOperations();
+    //endregion
 
 
     public flowANewClient() throws IOException, ParseException {
@@ -98,7 +90,7 @@ public class flowANewClient extends login {
     }
 
     @Test(groups = {"Delivery", "New Client Contact", "Delivery_new_contact" })
-    public void createClientContact_Delivery_SendInviteFromPTO() throws InterruptedException {
+    public void createClientContact_Delivery_SendInviteFromPTO() throws InterruptedException, SQLException, ClassNotFoundException {
         clientContactCreation_Delivery();
         DeliveryBasePage
                 .clickUserNavDropdown();
@@ -112,17 +104,37 @@ public class flowANewClient extends login {
         sendPortalInvitation_PTO();
     }
 
-    @Test(groups = {"Delivery"})
-    public void createClientContact_Delivery_SendInviteFromDelivery() throws InterruptedException {
+    @Test(groups = {"Delivery", "New Client Contact", "Delivery_new_contact"})
+    public void createClientContact_Delivery_SendInviteFromDelivery() throws InterruptedException, SQLException, ClassNotFoundException {
         clientContactCreation_Delivery();
         sendPortalInvitation_Delivery();
     }
 
-    public void clientContactCreation_Delivery() throws InterruptedException {
-        createProjectStandard();
+    public void clientContactCreation_Delivery() throws InterruptedException, SQLException, ClassNotFoundException {
+        JDBCOperations.ensureProjectDoesNotExist();
+        if(JDBCOperations.projectExists == true){
+            System.out.println("Project already created in this environment.");
+            DashboardPage
+                    .hoverOverWhiteboardAndProjects()
+                    .clickProjectSearch();
+            ProjectSearchPage
+                    .pageLoad()
+                    .clickProjectSearchInput()
+                    .enterValueInProjectSearch(ProjectCreationPage.codeNameVal)
+                    .clickSearchBtn();
+            ProjectSearchResultsPage
+                    .clickFirstProjectResult();
+            ProjectResearchPage
+                    .clickProjectName();
+        }
+        else{
+            createProjectStandard();
+        }
         ProjectDetailsPage
-                .clickEditProject()
-                .addNewClientContact();
+                .clickEditProject();
+        ProjectEditPage
+                .addNewClientContact()
+                .saveProjEdits();
     }
 
     public void sendPortalInvitation_Delivery()
@@ -151,26 +163,19 @@ public class flowANewClient extends login {
                 .clickDeleteContact()
                 .confirmDeleteContact()
                 .verifyClientDeletionMessage();
-        ensureInvitationAndClientProfileDataCleared();
+        JDBCOperations.ensureInvitationAndClientProfileDataCleared();
         WebDriverRunner.closeWebDriver();
-    }
-
-    public void ensureInvitationAndClientProfileDataCleared() throws SQLException, ClassNotFoundException {
-        Connection con = DriverManager.getConnection(dbURL, dbUserId, dbPassword);
-        Class.forName("org.postgresql.Driver");
-        Statement stmt = con.createStatement();
-        stmt.executeUpdate(deleteProfileDetailsAndInvites);
-        System.out.println("Newly created contact has been deleted.");
     }
 
     public void createProjectStandard()
     {
         DashboardPage
                 .pageLoad()
-                .clickNewProject();
+                .clickNewProjectBtn();
         ProjectCreationPage
                 .createProject(ON_COMPLETION, "Alpha Test", "Competitors", "Test Competitor Angle")
-                .clickCreateProjects()
+                .clickCreateProjects();
+        ProjectDetailsPage
                 .verifyProjectCreated();
     }
 
