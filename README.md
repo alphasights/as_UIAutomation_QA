@@ -82,15 +82,19 @@ Potentially the dynamic paths within various packages in this project may not wo
 Various Internet Service Providers such as Verizon Fios have been rolling out IPv6 to their customers.  Currently, AWS VPN, which we use to access the UI Automation tester account credentials (for Google authentication) does not fully support IPv6: [Read Here](https://docs.aws.amazon.com/vpn/latest/s2svpn/ipv4-ipv6.html).  
 To resolve this (Mac):
 1. Go to wifi icon
-![This is an image](readmeResources/Screen Shot 2023-03-09 at 4.33.06 PM.png)
+![This is an image](readmeResources/wifiIcon.png)
+
 2. Click Network Preferences from wifi dropdown
-![This is an image](readmeResources/Screen Shot 2023-03-09 at 4.50.59 PM.png)
+![This is an image](readmeResources/netPref.png)
+
 3. Click Advanced... button from Networks window
-![This is an image](readmeResources/Screen Shot 2023-03-09 at 4.52.01 PM.png)
+![This is an image](readmeResources/advancedWifi.png)
+
 4. Click TCP/IP from the Wi-Fi window
-![This is an image](readmeResources/Screen Shot 2023-03-09 at 4.52.19 PM.png)
+![This is an image](readmeResources/tcpIP.png)
+
 5. Select Link-local only on Configure IPv6
-![This is an image](readmeResources/Screen Shot 2023-03-09 at 4.52.25 PM.png)
+![This is an image](readmeResources/linkLocal.png)
 
 
 
