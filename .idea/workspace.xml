@@ -4,43 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3a9f36c8-cb73-4dac-9098-1c158688f90d" name="Changes" comment="Added some details for Redelivery quickLaunchNewProj.  Also made some changes to the logic for googleAuth.">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/4/0495da83bf8603dc217e9d83c0847e9cb295aee8" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/7/072d10be4b580f1e810bc0a8b78c1866d9489717" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/c/0c0005df2238cb25acc71801f4687625012b17fc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/5/154049ad02327298f8d8e5746ec4285c54f4f521" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/f/1f1763f358c257ea3515417352b82b0165647ad1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/2/32e074f71d16c1e88ac02aa83592ca6ad1fd98a8" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/a/4a66255e5ceba96331d28347ee672da2815c2513" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/a/5aa05d3e143485f6b23d8bb020082da66c926267" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/d/5d837c4ed85ecaaf932c506e80ff5d7b9f3d590d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/5/65f8030a0eff4339a724f25bc013d85e514a2b3e" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/2/72d3d48507ad222296a7e211ddc9cb3280f601c7" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/3/73b0da900626dbb488b6eebbd41dcad3ae191b66" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/7/77966baa5f3876633679f322d1f16eaeba5fdf99" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/2/92593025ca2fcb42708175d7f919745809baec0c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/b/9bfd32676be4ed93d980994a6a90338cc5ab78d6" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/5/a5cc2925ca8258af241be7e5b0381edf30266302" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/6/d6497cf34ef6bb1ccf5918d498ba006cd0f49345" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/b/dbe0c99f94316e0a12cac068cc06d34674d841ce" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/f/efb57c1fd77d15aaed5032683650a5233a390071" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/5/f5f2ff5773aa0ed3f3e468839ccd04b8cd50688b" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/pages/whiteboardAndProjs/projectDetailsPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/pages/whiteboardAndProjs/projectResearchPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/pages/whiteboardAndProjs/projectSearchPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/pages/whiteboardAndProjs/projectSearchResultsPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/utilities/jdbcOperations.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+    <list default="true" id="3a9f36c8-cb73-4dac-9098-1c158688f90d" name="Changes" comment="Updated details on multiple page objects.  Added screenshot images for Readme.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/browsers.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/originalFlows/flowANewClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/originalFlows/flowANewClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/pages/dashboardPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/pages/dashboardPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/pages/deliveryBasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/pages/deliveryBasePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/pages/projectCreationPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/pages/whiteboardAndProjs/projectCreationPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/pages/projectDetailsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/pages/whiteboardAndProjs/projectEditPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/tests/whiteboardAndProjects.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/tests/whiteboardAndProjects.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,6 +99,7 @@
       <recent name="$PROJECT_DIR$/resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/readmeResources" />
       <recent name="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/originalFlows" />
       <recent name="$PROJECT_DIR$/src/test/java/alphasights/apps" />
     </key>
@@ -278,7 +244,7 @@
       <workItem from="1672859162147" duration="14315000" />
       <workItem from="1673619995561" duration="55180000" />
       <workItem from="1674571487750" duration="18058000" />
-      <workItem from="1678224860396" duration="2517000" />
+      <workItem from="1678224860396" duration="5002000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit and push">
       <created>1667401323964</created>
@@ -336,7 +302,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674161255833</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Updated details on multiple page objects.  Added screenshot images for Readme.">
+      <created>1678400080560</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1678400080560</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -380,7 +353,8 @@
     <MESSAGE value="Added COMPANIES_DELIVERY to enum and the url for it in googleAuth." />
     <MESSAGE value="Updates including flows etc." />
     <MESSAGE value="Added some details for Redelivery quickLaunchNewProj.  Also made some changes to the logic for googleAuth." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added some details for Redelivery quickLaunchNewProj.  Also made some changes to the logic for googleAuth." />
+    <MESSAGE value="Updated details on multiple page objects.  Added screenshot images for Readme." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated details on multiple page objects.  Added screenshot images for Readme." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
