@@ -62,17 +62,9 @@ public class projectEditPage extends deliveryBasePage {
     public projectEditPage saveProjEdits()
     {
         editProjectForm.click();
-        Selenide.actions().sendKeys(HOME);
-        $(saveEdits).shouldBe(editable);
+        executeJavaScript("window.scrollTo(0,0);");
+        $(saveEdits).is(enabled);
         saveEdits.click();
-        return this;
-    }
-
-
-    public projectEditPage clickAddContact()
-    {
-        $(addContact).shouldBe(editable);
-        addContact.click();
         return this;
     }
 
@@ -108,7 +100,7 @@ public class projectEditPage extends deliveryBasePage {
 
     public projectEditPage addExistingClientContact()
     {
-        clickAddContact();
+        //clickAddContact();
         $(clientContactSelector).shouldBe(editable);
         clientContactSelector.click();
         //Send keys to input
@@ -136,6 +128,15 @@ public class projectEditPage extends deliveryBasePage {
             $(firstEmberSelectionOption).shouldNotBe(partialText("Searching for contacts..."), Duration.ofSeconds(5));
         }
         firstEmberSelectionOption.click();
+        return this;
+    }
+
+    public projectEditPage deleteContact(int contactValue)
+    {
+        ElementsCollection deleteContact = $$x("//span[text()='Delete Contact']");
+        $(deleteContact.last()).shouldBe(enabled);
+        deleteContact.first().click();
+        System.out.println("Client contact was deleted from Project Edit screen in Delivery.");
         return this;
     }
 

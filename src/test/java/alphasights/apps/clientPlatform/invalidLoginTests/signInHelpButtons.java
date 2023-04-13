@@ -1,11 +1,16 @@
 package alphasights.apps.clientPlatform.invalidLoginTests;
 
 import alphasights.apps.clientPlatform.pages.signInPage;
+import com.codeborne.selenide.Condition;
 import org.json.simple.parser.ParseException;
+import org.testng.annotations.AfterGroups;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
+
+import static com.codeborne.selenide.Condition.enabled;
 
 public class signInHelpButtons extends baseInvalidLogin{
     signInPage SignInPage = new signInPage();
@@ -15,34 +20,43 @@ public class signInHelpButtons extends baseInvalidLogin{
         return new Object[][] {{"abc@def.com"}};
     }
 
-    @Test(groups = {"ClientPlatform", "Sign In Helpers"})
-    public void contactTechSupportFromEmailEntry(){
+    @Test(groups = {"ClientPlatform", "SignInHelpers"})
+    public void clickHelpFromEmailEntry(){
         //Verifying contact tech support url is correct.  Will eventually test actual email creation via API Tool
         SignInPage
                 .verifyUsernameInputAvailable()
-                .verifyContactSupportEmailIsRightURL();
+                .clickHelp();
     }
 
-    @Test(groups = {"ClientPlatform", "Sign In Helpers"}, dataProvider = "userName")
-    public void contactTechSupportFromPasswordEntry(String username){
+    @Test(groups = {"ClientPlatform", "SignInHelpers"}, dataProvider = "userName")
+    public void clickHelpFromPasswordEntry(String username){
         //Verifying contact tech support url is correct.  Will eventually test actual email creation via API Tool
         SignInPage
                 .enterUserName(username)
-                .verifyContactSupportEmailIsRightURL();
+                .clickHelp();
     }
 
-    @Test(groups = {"ClientPlatform", "Sign In Helpers"}, dependsOnMethods = {"contactTechSupportFromPasswordEntry"})
+    @Test(groups = {"ClientPlatform", "SignInHelpers"}, dependsOnMethods = {"clickHelpFromPasswordEntry"})
     public void forgotPasswordPromptsCheckYourInbox(){
         SignInPage
                 .clickForgotPassword()
                 .verifyCheckYourInbox();
     }
 
-    @Test(groups = {"Client+Platform","Sign In Helpers"}, dependsOnMethods = {"forgotPasswordPromptsCheckYourInbox"})
-    public void forgotPasswordReturnToSignIn(){
-        SignInPage
-                .clickReturnToSignIn()
-                .verifyUsernameInputAvailable();
+    @AfterMethod
+    public void returnToSignIn(){
+        if(SignInPage.backfromHelp.is(enabled))
+        {
+            SignInPage
+                    .clickBackFromHelp();
+        }
+        else if (SignInPage.returnToSignIn.is(enabled)) {
+            SignInPage
+                    .clickReturnToSignIn();
+        }
+        else {
+            System.out.println("No need to navigate back.  Testing will continue...");
+        }
     }
 
 

@@ -22,22 +22,24 @@ public class signInPage {
     //endregion
 
     //region Locators
-    public SelenideElement signInModal = $("div.ReactModal__Content");
-    public SelenideElement emailInput = $(By.name("email"));
-    public SelenideElement nextBtn = $x("//button[text()='Next']");
-    public SelenideElement contactSupportLink = $(By.linkText("Contact technical support."));
-    public SelenideElement editEmail = $("div.aui-inline-flex.aui-items-center.aui-space-x-2.aui-text-grey-4.aui-cursor-pointer");
-    public SelenideElement passwordInput = $(By.name("password"));
-    public SelenideElement signinBtn = $x(("//button[text()='Sign In']"));
-    public SelenideElement rememberMe = $("i.aui-icon.aui-icon-checkbox");
-    public SelenideElement forgotPassword = $x(("//a[text()='Forgot password?']"));
-    public SelenideElement sendSignInLink = $x("//button[text()='Send Sign In Link']");
-    public SelenideElement alphaSightsLimitationsOfUse = $(By.linkText("AlphaSights' Limitations of Use"));
-    public SelenideElement usernameInvalidEmailNotice = $x("//div[text()='Invalid email address']");
-    public SelenideElement invalidLoginNotice = $x("//div[text()='Your email or password does not match. If this account is not yet registered please contact technical support.']");
-    public SelenideElement checkYourInbox = $("div.ReactModal__Content");
-    public SelenideElement resendPasswordReset = $(By.linkText("Didn't work? Resend."));
-    public SelenideElement returnToSignIn = $(By.linkText("Return to Sign In"));
+    public SelenideElement signInModal = $("div.sc-cxabCf.cHPQrW");
+    public SelenideElement emailInput = $x("//input[@placeholder='Email']");
+    public SelenideElement nextBtn = $("button.sc-iJkHyd.iwOkOj");
+    public SelenideElement editEmail = $("div.sc-cxabCf.cKtFqp");
+    public SelenideElement passwordInput = $x("//input[@placeholder='Password']");
+    public SelenideElement signinBtn = $(("button.sc-iJkHyd.iwOkOj"));
+    public SelenideElement rememberMe = $("div.checkbox-icon");
+    public SelenideElement forgotPassword = $x(("//p[text()='Forgot password?']"));
+    public SelenideElement sendSignInLink = $x("//p[text()='Send Sign In Link']");
+    public SelenideElement helpLink = $x("//p[text()='Help']");
+    public SelenideElement alphaSightsLimitationsOfUse = $x("//p[text() = 'Limitations of Use']");
+    public SelenideElement signUpLink = $x("//p[text() = 'Sign Up']");
+    public SelenideElement usernameInvalidEmailNotice = $x("//span[text()='Enter a valid email format.']");
+    public SelenideElement invalidLoginNotice = $x("//span[text()='Your email and/or password is incorrect.']");
+    public SelenideElement checkYourInbox = $("div.LoginTransition-enter-done");
+    public SelenideElement resendPasswordReset = $x("//p[text()='Didn’t receive the email? Resend.']");
+    public SelenideElement backfromHelp = $x("//p[text()= 'Back']");
+    public SelenideElement returnToSignIn = $x("//p[text()= 'Return to Sign In']");
 
 
 
@@ -55,7 +57,13 @@ public class signInPage {
     {
         $(emailInput).shouldBe(editable);
         emailInput.sendKeys(email);
-        $(nextBtn).shouldBe(editable);
+        clickNextButton();
+        return this;
+    }
+
+    public signInPage clickNextButton()
+    {
+        $(nextBtn).shouldBe(enabled);
         nextBtn.click();
         return this;
     }
@@ -98,10 +106,10 @@ public class signInPage {
         signinBtn.click();
         return this;
     }
-    public signInPage clickContactSupportLink()
-    {
-        $(contactSupportLink).shouldBe(editable);
-        contactSupportLink.click();
+
+    public signInPage clickRememberMe(){
+        $(rememberMe).shouldBe(enabled);
+        rememberMe.click();
         return this;
     }
 
@@ -111,9 +119,39 @@ public class signInPage {
         return this;
     }
 
+    public signInPage clickSignIn(){
+        $(signinBtn).shouldBe(enabled);
+        signinBtn.click();
+        return this;
+    }
+
+    public signInPage clickSendSignInLink(){
+        $(sendSignInLink).shouldBe(enabled);
+        sendSignInLink.click();
+        return this;
+    }
+
+    public signInPage clickHelp(){
+        $(helpLink).shouldBe(enabled);
+        helpLink.click();
+        return this;
+    }
+
+    public signInPage clickLimitationsOfUse(){
+        $(alphaSightsLimitationsOfUse).shouldBe(enabled);
+        alphaSightsLimitationsOfUse.click();
+        return this;
+    }
+
     public signInPage clickResendPasswordReset(){
         $(resendPasswordReset).shouldBe(editable);
         resendPasswordReset.click();
+        return this;
+    }
+
+    public signInPage clickBackFromHelp(){
+        $(backfromHelp).shouldBe(editable);
+        backfromHelp.click();
         return this;
     }
 
@@ -124,7 +162,7 @@ public class signInPage {
     }
 
     public signInPage refreshPage(){
-        timeout = 5000;
+        //timeout = 5000;
         Selenide.refresh();
         $("body").shouldBe(visible);
         Selenide.switchTo().activeElement();
@@ -172,17 +210,15 @@ public class signInPage {
         return this;
     }
 
-
-    public signInPage verifyContactSupportEmailIsRightURL()
-    {
-        $(contactSupportLink).shouldBe(editable);
-        contactSupportLink.getAttribute("href").equals(emailtoClientSupportUrl);
-        return this;
-    }
-
     public signInPage verifyCheckYourInbox()
     {
         $(checkYourInbox).shouldBe(editable);
+        return this;
+    }
+
+    public signInPage waitForSignInPageToLoad()
+    {
+        emailInput.exists();
         return this;
     }
     //endregion

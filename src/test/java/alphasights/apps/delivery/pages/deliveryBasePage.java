@@ -1,15 +1,21 @@
 package alphasights.apps.delivery.pages;
 
 import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.SelenideDriver;
 import com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.WebDriverRunner;
 import org.openqa.selenium.By;
 
 import java.util.Collection;
 
 import static com.codeborne.selenide.Condition.editable;
+import static com.codeborne.selenide.Condition.enabled;
 import static com.codeborne.selenide.Selenide.*;
 
 public class deliveryBasePage {
+    //region Variables
+    //endregion
+
     //region Main Nav Links
     public SelenideElement dashboardLink = $(By.linkText("Dashboard"));
 
@@ -39,6 +45,7 @@ public class deliveryBasePage {
     public SelenideElement performanceLinkYourPerformance = $(By.linkText("Your Performance"));
     public SelenideElement performanceLinkTeamPerformance = $(By.linkText("Team Performance"));
     public SelenideElement performanceLinkOfficePerformance = $(By.linkText("Office Performance"));
+    public SelenideElement userNavDropdown = $("ul:last-child > li.top-nav__item.top-nav__item--has-dropdown:last-child");
     //Finish the rest of the Performance links, Resource Hub and Commercial Hub
     //endregion
 
@@ -46,13 +53,13 @@ public class deliveryBasePage {
 
 
 
-    public SelenideElement userNavDropdown = $("ul:last-child > li.top-nav__item.top-nav__item--has-dropdown:last-child");
+
 
     public deliveryBasePage clickUserNavDropdown()
     {
-        $(userNavDropdown).shouldBe(editable);
+        $(userNavDropdown).shouldBe(enabled);
         userNavDropdown.click();
-        Selenide.switchTo().window(1);
+        Selenide.switchTo().window((WebDriverRunner.getWebDriver().getWindowHandles().size())-1);
         return this;
     }
     public deliveryBasePage hoverOverWhiteboardAndProjects()

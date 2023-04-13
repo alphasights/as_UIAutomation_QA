@@ -15,9 +15,10 @@ public class newProjectCreation extends googleAuth {
     quickLaunchNewProj QuickLaunchNewProj = new quickLaunchNewProj();
 
         @Test (groups = {"New Proj Creation"})
-        public void negativeTest1()
+        public void demoTest1()
         {
             QuickLaunchNewProj
+                    .accountSelection("AlphaTest Inc. (for testing) 1")
                     .clickNextBtn();
         }
 

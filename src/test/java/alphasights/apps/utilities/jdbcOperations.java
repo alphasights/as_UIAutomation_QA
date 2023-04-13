@@ -19,12 +19,14 @@ public class jdbcOperations {
     JSONObject jsonObject = (JSONObject) obj;
     String clientPlatformUsername = (String)jsonObject.get("clientPlatformUsername");
     String clientPlatformPassword = (String)jsonObject.get("clientPlatformPassword");
+    public String googleUser = (String) jsonObject.get("googleUser");
     public String qaClientPlatformDB = "jdbc:postgresql://client-portal-qa-staging-db.alphasights.com:5432/production";
     public String qaPistachioDB = "jdbc:postgresql://pistachio-qa-staging-db.alphasights.com:5432/pistachio";
     public String dbUserClientPlatform = (String) jsonObject.get("clientPlatformDBUser");
     public String dbUserClientPlatformPW = (String) jsonObject.get("clientPlatformDBPassword");
     public String dbUserPistachio = (String) jsonObject.get("pistachioDBUser");
     public String dbUserPistachioPW = (String) jsonObject.get("pistachioDBPassword");
+    public String vikiPW = null;
     public String deleteProfileDetailsAndInvites =
             "delete from client_profile_updates\n"+
                     "where client_profile_id in (select id from client_profiles where email like 'automationtester%');"+
@@ -42,6 +44,16 @@ public class jdbcOperations {
             "select *\n"+
                     "from client_contacts\n"+
                     "where \"name\" = 'Automation Tester A'";
+
+    public String disableOldProjects =
+            "update pistachio.public.projects\n" +
+                    "set codename = concat(codename, ' - DISABLED'), state = 'idle'\n" +
+                    "where creator_id = '6568668' and state != 'idle';\n"+
+                    "update pistachio.public.projects\n" +
+                    "set codename = concat(codename, 'I')\n"+
+                    "where creator_id = '6568668' and (codename like '%OLD AUTOMATION' or codename  like '%I')";
+
+
     public static boolean projectExists;
     public static boolean userExists;
     //endregion
@@ -73,6 +85,22 @@ public class jdbcOperations {
             System.out.println("Project codename already exists.");
             projectExists = true;
         }
+    }
+
+    public void disableExistingProj(String dynamicPistachioPW) throws SQLException, ClassNotFoundException {
+        Connection con = DriverManager.getConnection(qaPistachioDB, googleUser, dynamicPistachioPW);
+        Class.forName("org.postgresql.Driver");
+        Statement stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+        ResultSet resultSet = stmt.executeQuery(disableOldProjects);
+        if (!resultSet.isBeforeFirst()) {
+            System.out.println("No data exists.");
+            projectExists = false;
+        }
+        else{
+            System.out.println("Project status has been marked Idle and had DISABLED appended to the title.");
+            projectExists = true;
+        }
+
     }
 
     public void ensureUserDoesNotExist() throws SQLException, ClassNotFoundException {
