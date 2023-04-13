@@ -59,15 +59,14 @@ public class projectCreationPage extends deliveryBasePage {
     public SelenideElement alphaCompaniesSearchIcon = $("i.company-search-icon");
     public SelenideElement alphaCompaniesNextStep = $("button.aui-border.aui-bg-grey-5.aui-border-grey-5.aui-border-solid.aui-text-white.aui-cursor-pointer.aui-py-3.aui-px-4.aui-rounded.aui-text-base.aui-outline-none.aui-font-semibold.aui-text-sub-text.aui-px-6.aui-mt-16");
     public SelenideElement alphaCompaniesAddUnknown = $("div > button.aui-border.aui-bg-transparent.aui-border-transparent.aui-text-dark-1.aui-cursor-pointer.aui-py-3.aui-px-4.aui-outline-none.aui-font-semibold");
-    public SelenideElement clientInstructionsTextArea = $("div.project-form-group.aui-fade-in.aui-text-dark-1.aui-mb-6.aui-mt-12.aui-relative > span.aui-block.aui-mt-8.ember-view > div > div.aui-markdown-content.aui-w-full > div > div > div");
-    public SelenideElement internalDeliveryGuidelinesTextArea = $x("//textarea[text()='Internal project notes, for example Update the client every day at 6']");
+    public SelenideElement clientInstructionsTextArea = $("[data-testid=\"slate-content-editable\"]");
+    public SelenideElement internalDeliveryGuidelinesTextArea = $x("//textarea[@placeholder='Internal project notes, for example Update the client every day at 6']");
     public SelenideElement clientEntitySelector = $x("//span[text()='Select Entity']");
     public ElementsCollection emberInput = $$("input.ember-power-select-search-input");
     public SelenideElement emberDropdown = $("div.ember-basic-dropdown-content.ember-power-select-dropdown.ember-basic-dropdown-content--in-place.ember-basic-dropdown-content--left.ember-basic-dropdown-content--below.ember-basic-dropdown--transitioned-in.ember-view");
     public SelenideElement lastClientEntitySelectOption = $("li.ember-power-select-option:last-child");
     public SelenideElement firstEmberSelectionOption = $("li.ember-power-select-option:first-child");
     public SelenideElement selectedClientEntity = $("div.x-form-field.x-form-field--select.x-form-field--client-entity.x-form-field--required.ember-view > div.ember-view > span.aui.x-form-field__element--select.ember-view > div.ember-basic-dropdown.ember-view  > div.ember-power-select-trigger.x-form-field__element.ember-basic-dropdown-trigger.ember-basic-dropdown-trigger--in-place.ember-view > span.ember-power-select-selected-item");
-
     public SelenideElement clientCategorySelector = $("div.project-form-group__column.x-form-field.x-form-field--select.x-form-field--category.x-form-field--required.ember-view > div.ember-view > span.aui.x-form-field__element--select.ember-view > div.ember-basic-dropdown.ember-view > div.ember-power-select-trigger.x-form-field__element.ember-basic-dropdown-trigger.ember-basic-dropdown-trigger--in-place.ember-view");
     public SelenideElement selectedClientCategory = $("div.project-form-group__column.x-form-field.x-form-field--select.x-form-field--category.x-form-field--required.ember-view > div.ember-view > span.aui.x-form-field__element--select.ember-view > div.ember-basic-dropdown.ember-view > div.ember-power-select-trigger.x-form-field__element.ember-basic-dropdown-trigger.ember-basic-dropdown-trigger--in-place.ember-view > span.ember-power-select-selected-item");
     public SelenideElement clientContactSelector = $x("//span[text()='Select Client Contact']");

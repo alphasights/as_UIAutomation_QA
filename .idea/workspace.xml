@@ -4,8 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3a9f36c8-cb73-4dac-9098-1c158688f90d" name="Changes" comment="Updated details on multiple page objects.  Added screenshot images for Readme.">
+    <list default="true" id="3a9f36c8-cb73-4dac-9098-1c158688f90d" name="Changes" comment="changed image names for readme">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/a/4a66255e5ceba96331d28347ee672da2815c2513" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/invalidLoginTests/signInHelpButtons.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/invalidLoginTests/signInHelpButtons.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/originalFlows/flowANewClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/originalFlows/flowANewClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/pages/signInPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/pages/signInPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/pages/deliveryBasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/pages/deliveryBasePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/pages/whiteboardAndProjs/projectCreationPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/pages/whiteboardAndProjs/projectCreationPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/pages/whiteboardAndProjs/projectDetailsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/pages/whiteboardAndProjs/projectDetailsPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/pages/whiteboardAndProjs/projectEditPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/pages/whiteboardAndProjs/projectEditPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/pistachio/pages/clientContactsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/pistachio/pages/clientContactsPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/redelivery/pages/quickLaunchNewProj.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/redelivery/pages/quickLaunchNewProj.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/redelivery/tests/newProjectCreation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/redelivery/tests/newProjectCreation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/utilities/googleAuth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/utilities/googleAuth.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/utilities/jdbcOperations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/utilities/jdbcOperations.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,28 +88,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
-    &quot;ToolWindowBuild.ShowToolbar&quot;: &quot;false&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/user/Documents/GitHub/as_UIAutomation_QA/resources&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2735632&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.appearance&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "ToolWindowBuild.ShowToolbar": "false",
+    "WebServerToolWindowFactoryState": "false",
+    "full.screen.before.presentation.mode": "false",
+    "last_opened_file_path": "/Users/user/Documents/GitHub/as_UIAutomation_QA/resources",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2735632",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "configurable.group.appearance",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/resources" />
@@ -112,27 +129,36 @@
       <recent name="alphasights.apps.pistachio.pages" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.flowANewClient.createClientContact_Delivery_SendInviteFromPTO">
-    <configuration name="/Users/user/Library/Caches/JetBrains/IntelliJIdea2022.1/temp-testng-customsuite.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.newProjectCreation.demoTest1">
+    <configuration name="flowANewClient.createClientContact_Delivery_SendInviteFromPTO" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="as_UIAutomation_QA" />
+      <shortenClasspath name="NONE" />
+      <useClassPathOnly />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="alphasights.apps.clientPlatform.originalFlows.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="SUITE_NAME" value="$USER_HOME$/Library/Caches/JetBrains/IntelliJIdea2022.1/temp-testng-customsuite.xml" />
+      <option name="SUITE_NAME" value="" />
       <option name="PACKAGE_NAME" value="alphasights.apps.clientPlatform.originalFlows" />
       <option name="MAIN_CLASS_NAME" value="alphasights.apps.clientPlatform.originalFlows.flowANewClient" />
       <option name="METHOD_NAME" value="createClientContact_Delivery_SendInviteFromPTO" />
-      <option name="TEST_OBJECT" value="SUITE" />
+      <option name="GROUP_NAME" value="" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="PROPERTIES_FILE" value="" />
       <properties />
       <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="flowANewClient" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="flowANewClient.createClientContact_Delivery_SendInviteFromPTO1" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="as_UIAutomation_QA" />
       <extension name="coverage">
         <pattern>
@@ -142,24 +168,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="alphasights.apps.clientPlatform.originalFlows" />
       <option name="MAIN_CLASS_NAME" value="alphasights.apps.clientPlatform.originalFlows.flowANewClient" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="flowANewClient.createClientContact_Delivery_SendInviteFromDelivery" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="as_UIAutomation_QA" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="alphasights.apps.clientPlatform.originalFlows.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="alphasights.apps.clientPlatform.originalFlows" />
-      <option name="MAIN_CLASS_NAME" value="alphasights.apps.clientPlatform.originalFlows.flowANewClient" />
-      <option name="METHOD_NAME" value="createClientContact_Delivery_SendInviteFromDelivery" />
+      <option name="METHOD_NAME" value="createClientContact_Delivery_SendInviteFromPTO1" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -167,7 +176,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="flowANewClient.createClientContact_Delivery_SendInviteFromPTO" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="flowANewClient.createClientContact_Delivery_SendInviteFromPTO2" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="as_UIAutomation_QA" />
       <extension name="coverage">
         <pattern>
@@ -177,7 +186,25 @@
       </extension>
       <option name="PACKAGE_NAME" value="alphasights.apps.clientPlatform.originalFlows" />
       <option name="MAIN_CLASS_NAME" value="alphasights.apps.clientPlatform.originalFlows.flowANewClient" />
-      <option name="METHOD_NAME" value="createClientContact_Delivery_SendInviteFromPTO" />
+      <option name="METHOD_NAME" value="createClientContact_Delivery_SendInviteFromPTO2" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="newProjectCreation.demoTest1" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="as_UIAutomation_QA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="alphasights.apps.redelivery.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="alphasights.apps.redelivery.tests" />
+      <option name="MAIN_CLASS_NAME" value="alphasights.apps.redelivery.tests.newProjectCreation" />
+      <option name="METHOD_NAME" value="demoTest1" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -193,7 +220,7 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="alphasights.apps.delivery.tests" />
+      <option name="PACKAGE_NAME" value="alphasights.apps.redelivery.tests" />
       <option name="MAIN_CLASS_NAME" value="alphasights.apps.redelivery.tests.newProjectCreation" />
       <option name="METHOD_NAME" value="negativeTest1" />
       <option name="TEST_OBJECT" value="METHOD" />
@@ -205,10 +232,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.newProjectCreation.demoTest1" />
         <item itemvalue="TestNG.flowANewClient.createClientContact_Delivery_SendInviteFromPTO" />
-        <item itemvalue="TestNG./Users/user/Library/Caches/JetBrains/IntelliJIdea2022.1/temp-testng-customsuite.xml" />
-        <item itemvalue="TestNG.flowANewClient" />
-        <item itemvalue="TestNG.flowANewClient.createClientContact_Delivery_SendInviteFromDelivery" />
+        <item itemvalue="TestNG.flowANewClient.createClientContact_Delivery_SendInviteFromPTO1" />
+        <item itemvalue="TestNG.flowANewClient.createClientContact_Delivery_SendInviteFromPTO2" />
         <item itemvalue="TestNG.newProjectCreation.negativeTest1" />
       </list>
     </recent_temporary>
@@ -216,7 +243,7 @@
   <component name="SeleniumInternalSettingsState">
     <option name="lastFrameworkName" value="Selenide" />
     <option name="lastLanguageId" value="JAVA" />
-    <option name="lastUrl" value="https://qa-pistachio.alphasights.com/client/accounts" />
+    <option name="lastUrl" value="https://accounts.google.com/o/oauth2/v2/auth/identifier?client_id=545637650224-n3gdg249lc2p88bg9t1sg33rhbmekk2f.apps.googleusercontent.com&amp;redirect_uri=https%3A%2F%2Fqa-pistachio.alphasights.com%2Foauth2%2Fidpresponse&amp;response_type=code&amp;scope=email%20profile%20openid&amp;state=35ATTJJH2XhxFeHYLekOlX4rTPFISueTcL4sWvX5kbqcjNvvT4RlzCUdv8GOmC49XGADFG9TvByUaOcaYRksDNmqURZWQqLFeHZwd1zAwF5663AgMvW7ycfNMCxP7DVdxjgd4RtBRtAFaOUJToQBvfVG1AC%2FGzYXwYSOyXL4cSNBRub7ur2AH%2B8khg2WsWmR9pOipc%2BIw53S1IJ%2BcZv%2Bww6N0nsk&amp;hd=alphasights.com&amp;service=lso&amp;o2v=2&amp;flowName=GeneralOAuthFlow" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -244,7 +271,21 @@
       <workItem from="1672859162147" duration="14315000" />
       <workItem from="1673619995561" duration="55180000" />
       <workItem from="1674571487750" duration="18058000" />
-      <workItem from="1678224860396" duration="5002000" />
+      <workItem from="1678224860396" duration="5320000" />
+      <workItem from="1678461208963" duration="2644000" />
+      <workItem from="1678798611420" duration="43000" />
+      <workItem from="1678798692641" duration="2662000" />
+      <workItem from="1678803910913" duration="35482000" />
+      <workItem from="1679670992107" duration="224000" />
+      <workItem from="1679671230422" duration="396000" />
+      <workItem from="1679671658179" duration="30898000" />
+      <workItem from="1680195518679" duration="359000" />
+      <workItem from="1680195885483" duration="233000" />
+      <workItem from="1680196128257" duration="44000" />
+      <workItem from="1680196276939" duration="7351000" />
+      <workItem from="1680269661523" duration="25112000" />
+      <workItem from="1680611555566" duration="1208000" />
+      <workItem from="1680701214014" duration="6681000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit and push">
       <created>1667401323964</created>
@@ -309,7 +350,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678400080560</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="changed image names for readme">
+      <created>1678404439062</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1678404439063</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -354,7 +402,24 @@
     <MESSAGE value="Updates including flows etc." />
     <MESSAGE value="Added some details for Redelivery quickLaunchNewProj.  Also made some changes to the logic for googleAuth." />
     <MESSAGE value="Updated details on multiple page objects.  Added screenshot images for Readme." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated details on multiple page objects.  Added screenshot images for Readme." />
+    <MESSAGE value="changed image names for readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed image names for readme" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/originalFlows/flowANewClient.java</url>
+          <line>140</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/alphasights/apps/redelivery/tests/newProjectCreation.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

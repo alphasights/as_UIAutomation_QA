@@ -45,7 +45,7 @@ public class projectDetailsPage extends deliveryBasePage {
     //region Methods
     public projectDetailsPage clickEditProject()
     {
-        $(editProject).shouldBe(interactable);
+        $(editProject).shouldBe(enabled);
         editProject.click();
         return this;
     }

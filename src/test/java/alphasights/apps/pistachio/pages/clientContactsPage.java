@@ -62,7 +62,10 @@ public class clientContactsPage extends pistachioBasePage{
     public SelenideElement newContactAddressInput = $(By.id("client_contact_correspondence_address"));
     public SelenideElement newContactCountrySelector = $(By.id("client_contact_country_id"));
     public SelenideElement saveContact = $(("button.button.save"));
-    public SelenideElement sendInvite = $(By.linkText("Send invite"));
+    public SelenideElement editContact = $("a.button.edit.small");
+    public SelenideElement projectsListing = $(("section#projects"));
+    public SelenideElement firstProject = $(("ul#projects > li.clear.clearfix.high_state.project:nth-child(2) > div.name > a"));
+    public SelenideElement sendInvite = $x(("//a[contains(text(), 'Send invite')]"));
     public SelenideElement sendPortalInviteModal = $("#client-contacts_controller > div.ui-dialog.ui-corner-all.ui-widget.ui-widget-content.ui-front.ui-dialog-buttons");
     public SelenideElement sendPortalInviteText = $x("//div[text()='This will send the Client an email invite to the Portal. Continue?']");
     public SelenideElement yesSendInvite = $x("//button[text()='Yes, Send Invite']");
@@ -71,6 +74,7 @@ public class clientContactsPage extends pistachioBasePage{
     public SelenideElement portalInviteConfirmation = $("div.span.success");
     public SelenideElement deleteButton = $x("//a[text()='Delete']");
     public SelenideElement clientDeletionConfirmation = $("div.message_flash.success");
+    public SelenideElement nextButton = $("div#content > nav.pagination > span.next > a");
     //endregion
     //endregion
 
@@ -79,8 +83,18 @@ public class clientContactsPage extends pistachioBasePage{
     {
         $(pageHeading).shouldBe(enabled);
         $(lastClientContactRow).should(enabled);
-        $(pageHeading).shouldHave(text("Clients"));
+        $(pageHeading).shouldHave(exactText("Clients"));
         System.out.println("Client Contacts Page is loaded: Page Header - " + pageHeading.getText());
+        return this;
+    }
+
+    public clientContactsPage pageLoadedAfterSearch()
+    {
+        $(pageHeading).shouldBe(enabled);
+        $(lastClientContactRow).should(enabled);
+        $(pageHeading).shouldHave(exactText("Clients"));
+        $(nextButton).shouldNot(exist);
+        System.out.println("Client Contacts Page search results are loaded: Page Header - " + pageHeading.getText());
         return this;
     }
 
@@ -102,7 +116,6 @@ public class clientContactsPage extends pistachioBasePage{
 
     public clientContactsPage selectSearchedContact(String keywords)
     {
-        searchContact(keywords);
         SelenideElement searchedClientContact = $(By.linkText(keywords));
         searchedClientContact.click();
         return this;
@@ -146,16 +159,32 @@ public class clientContactsPage extends pistachioBasePage{
         return this;
     }
 
+    public clientContactsPage clickEditContact()
+    {
+        $(editContact).is(enabled);
+        editContact.click();
+        return this;
+    }
+
+    public clientContactsPage clickFirstProjFromClientContact()
+    {
+        firstProject.should(exist);
+        firstProject.scrollIntoView(true);
+        firstProject.click();
+        return this;
+    }
+
+
     public clientContactsPage clickSendInvite()
     {
-        $(sendInvite).shouldBe(editable);
+        $(sendInvite).shouldBe(enabled);
         sendInvite.click();
         return this;
     }
 
     public clientContactsPage verifySendInviteModalDisplays()
     {
-        $(sendPortalInviteModal).shouldBe(editable);
+        $(sendPortalInviteModal).shouldBe(enabled);
         $(sendPortalInviteText).should(exist);
         System.out.println("Send Portal Invite modal displays successfully.");
         return this;

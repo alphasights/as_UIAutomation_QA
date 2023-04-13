@@ -10,10 +10,12 @@ import alphasights.apps.pistachio.pages.clientContactsPage;
 import alphasights.apps.pistachio.tests.loginTests.login;
 import alphasights.apps.utilities.jdbcOperations;
 import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.WebDriverRunner;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import org.openqa.selenium.By;
 import org.testng.annotations.*;
 
 import java.io.FileReader;
@@ -24,6 +26,7 @@ import static alphasights.apps.delivery.pages.NPSOptions.ON_COMPLETION;
 import static alphasights.apps.pistachio.pages.internalTabNavs.CLIENTS;
 import static alphasights.apps.pistachio.pages.pistachioPages.CLIENT_ACCOUNTS;
 import static alphasights.apps.pistachio.pages.pistachioPages.CLIENT_CONTACTS;
+import static com.codeborne.selenide.Selenide.*;
 
 public class flowANewClient extends login {
 
@@ -36,7 +39,6 @@ public class flowANewClient extends login {
     String clientPlatformPassword = (String)jsonObject.get("clientPlatformPassword");
     pistachioBasePage PistachioBasePage = new pistachioBasePage();
     deliveryBasePage DeliveryBasePage = new deliveryBasePage();
-
     clientAccountsPage ClientsAccountsPage = new clientAccountsPage();
     clientContactsPage ClientContactsPage = new clientContactsPage();
     dashboardPage DashboardPage = new dashboardPage();
@@ -89,19 +91,44 @@ public class flowANewClient extends login {
                 .verifyPortalInviteConfirmation();
     }
 
+    public void selectFirstProjectFromClientContact()
+    {
+        ClientContactsPage
+                .clickFirstProjFromClientContact();
+    }
+
+    public void navigateToClientContactsFromDeliveryBase() throws InterruptedException {
+        DeliveryBasePage
+                .clickUserNavDropdown();
+        PistachioBasePage
+                .clickMainLink(CLIENTS)
+                .clickSubNavLink(CLIENT_CONTACTS);
+    }
+
     @Test(groups = {"Delivery", "New Client Contact", "Delivery_new_contact" })
     public void createClientContact_Delivery_SendInviteFromPTO() throws InterruptedException, SQLException, ClassNotFoundException {
         clientContactCreation_Delivery();
-        DeliveryBasePage
+        navigateToClientContactsFromDeliveryBase();
+        ClientContactsPage
+                .pageLoaded()
+                .searchContact("Automation Tester A")
+                .pageLoadedAfterSearch()
+                .selectSearchedContact("Automation Tester A");
+        sendPortalInvitation_PTO();
+        selectFirstProjectFromClientContact();
+        ProjectDetailsPage
+                .clickEditProject();
+        ProjectEditPage
+                .deleteContact(0)
+                .saveProjEdits()
                 .clickUserNavDropdown();
         PistachioBasePage
                 .clickMainLink(CLIENTS)
                 .clickSubNavLink(CLIENT_CONTACTS);
         ClientContactsPage
                 .pageLoaded()
-                .searchContact("Automation Tester A")
-                .selectSearchedContact("Automation Tester A");
-        sendPortalInvitation_PTO();
+                .searchContact("Automation Tester A");
+
     }
 
     @Test(groups = {"Delivery", "New Client Contact", "Delivery_new_contact"})
@@ -157,6 +184,7 @@ public class flowANewClient extends login {
                 .clickSignOut();
     }
 
+
     @AfterMethod(groups = {"New Client Contact"})
     public void deleteClientContact() throws SQLException, ClassNotFoundException{
         ClientContactsPage
@@ -164,6 +192,7 @@ public class flowANewClient extends login {
                 .confirmDeleteContact()
                 .verifyClientDeletionMessage();
         JDBCOperations.ensureInvitationAndClientProfileDataCleared();
+        vikiToPWScraper();
         WebDriverRunner.closeWebDriver();
     }
 
@@ -177,6 +206,23 @@ public class flowANewClient extends login {
                 .clickCreateProjects();
         ProjectDetailsPage
                 .verifyProjectCreated();
+    }
+    
+    public void vikiToPWScraper() throws SQLException, ClassNotFoundException {
+        executeJavaScript("window.open('https://viki.alphasights.com/rds/temp-access', '_blank');");
+        switchTo().window(1);
+        SelenideElement vikiDB = $(By.id("database"));
+        vikiDB.selectOption("pistachio-qa-staging-db.alphasights.com");
+        SelenideElement vikiAccessType = $(By.id("type"));
+        vikiAccessType.selectOption("read-write");
+        SelenideElement vikiSubmit = $x("//button[text()='Submit']]");
+        vikiSubmit.click();
+        SelenideElement vikiPassword = $("body > div > div > div:nth-child(2)");
+        JDBCOperations.vikiPW = vikiPassword.getText();
+        int index = JDBCOperations.vikiPW.indexOf(":");
+        JDBCOperations.vikiPW = JDBCOperations.vikiPW.substring(index + 2);
+        JDBCOperations.disableExistingProj(JDBCOperations.vikiPW);
+        Selenide.closeWindow();
     }
 
     @AfterTest

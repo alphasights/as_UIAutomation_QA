@@ -32,6 +32,8 @@ public class googleAuth {
     Object obj = jsonParser.parse(new FileReader(userDetails));
     JSONObject jsonObject = (JSONObject) obj;
     public String googleUserName = (String) jsonObject.get("googleUser");
+    public String redeliveryUsername = (String) jsonObject.get("redeliveryUsername");
+    public String redeliveryPassword = (String) jsonObject.get("redeliveryPassword");
     //endregion
 
     //region Password
@@ -56,7 +58,7 @@ public class googleAuth {
     public URL stagingDeliveryUrl = new URL("https://delivery-eng-playground.alphasights.com/dashboard");
     public URL stagingClientPlatformUrl = new URL("https://portal-staging.alphasights.com/sign-in");
     public URL companiesDeliveryUrl = new URL("https://companies-delivery.alphasights.com/");
-    public URL stagingNewProjectUrl = new URL("https://delivery-eng-playground.alphasights.com/next/projects/new");
+    public URL stagingNewProjectUrl = new URL("https://delivery-eng-playground.alphasights.com/projects/new");
     //endregion
 
     //region Production
@@ -133,7 +135,7 @@ public class googleAuth {
 
     @BeforeTest(groups = "setup")
     @Parameters("browser")
-    public static void config(@Optional String browser)
+    public void config(@Optional String browser)
     {
         if(browser == null)
         {
@@ -159,7 +161,7 @@ public class googleAuth {
         }
 
         Configuration.browserSize ="1366x768";
-        Configuration.timeout = 15000;
+        Configuration.timeout = 20000;
         SelenideLogger.addListener("allure", new AllureSelenide());
     }
 
