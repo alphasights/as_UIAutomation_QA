@@ -133,7 +133,7 @@ public class googleAuth {
         googleNextBtn.click();
     }
 
-    @BeforeTest(groups = "setup")
+    @BeforeSuite(groups = "setup")
     @Parameters("browser")
     public void config(@Optional String browser)
     {

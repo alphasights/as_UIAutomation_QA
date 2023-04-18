@@ -12,10 +12,10 @@ public class invalidLogins extends baseInvalidLogin {
 
 
         signInPage SignInPage = new signInPage();
-        clientPlatformBasePage BasePage = new clientPlatformBasePage();
+        clientPlatformBasePage ClientPlatformBasePage = new clientPlatformBasePage();
 
         @DataProvider (name = "userName")
-        public Object[][] dpMethod(){
+        public Object[][] testUserNames(){
             return new Object[][] {{"abc"}, {"abc@def"}, {"abc.com"}, {"abc@def.g"}};
         }
 
