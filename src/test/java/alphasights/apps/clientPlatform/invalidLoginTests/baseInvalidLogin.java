@@ -9,12 +9,6 @@ import java.io.IOException;
 
 public class baseInvalidLogin extends googleAuth{
 
-    @AfterTest
-    public void endSession()
-    {
-        Selenide.clearBrowserCookies();
-        Selenide.closeWebDriver();
-    }
 
     public baseInvalidLogin() throws IOException, ParseException {
     }

@@ -192,7 +192,7 @@ public class signInPage {
 
         $(clientPlatformBasePage.projectsLink).shouldBe(editable);
         $(ProjectsPage.lastProject).shouldBe(visible);
-        System.out.println(WebDriverRunner.url());
+        System.out.println("User has successfully logged in to:" + WebDriverRunner.url());
         return this;
     }
 

@@ -34,10 +34,6 @@ W
 'zbot_1671822135323/conf/zbot.properties,9/2/92593025ca2fcb42708175d7f919745809baec0c
 v
 Fsrc/test/java/alphasights/apps/pistachio/pages/clientAccountsPage.java,e/d/edc0cd6fde1d125a1cafd618d1d5bc7ce8f9025b
-…
-Usrc/test/java/alphasights/apps/clientPlatform/validLoginTests/pageTests/projects.java,5/3/53e9a06885d601ca7e392cf8efc7c0b46aed15f1
-~
-Nsrc/test/java/alphasights/apps/clientPlatform/validLoginTests/validLogins.java,c/c/cc526117e90346ecacb401daeb1a23ebfa07c1cc
 C
 regressionFlows.xml,a/e/aeb734278bc16a3863850ce4d5d1a8b62fb4bc0b
 w
@@ -80,8 +76,6 @@ w
 G.idea/sonarlint/issuestore/9/2/92593025ca2fcb42708175d7f919745809baec0c,8/3/839748eb7222be61b156757d293fe7d9ac335f65
 w
 G.idea/sonarlint/issuestore/0/7/072d10be4b580f1e810bc0a8b78c1866d9489717,9/b/9b703ca57ae16293823b71e8cc2d437e58cb81f3
-‚
-Rsrc/test/java/alphasights/apps/clientPlatform/invalidLoginTests/invalidLogins.java,5/b/5b16135c2f5f4fae60f2f3b0bd046eda6d0343a2
 ‰
 Ysrc/test/java/alphasights/apps/delivery/pages/whiteboardAndProjs/projectResearchPage.java,5/5/55ec3a2d58eb108a5269ba99ad0c06a7542b1329
 T
@@ -91,12 +85,6 @@ $clientPlatform-invalidLoginTests.xml,d/5/d563efb9260bc5188af472d096e1dc940c7a1
 testng.xml,5/2/522a7a4e21649af06297e31a9e33f13bb4fd3022
 o
 ?allure-results/04009e79-913c-447f-bedb-8df486ccc962-result.json,8/b/8b64b0ce4c0de1fa26470770752a354a4a27d701
-
-Osrc/test/java/alphasights/apps/clientPlatform/pages/clientPlatformBasePage.java,7/7/77966baa5f3876633679f322d1f16eaeba5fdf99
-|
-Lsrc/test/java/alphasights/apps/clientPlatform/pages/clientPlatformPages.java,7/3/73b0da900626dbb488b6eebbd41dcad3ae191b66
-u
-Esrc/test/java/alphasights/apps/clientPlatform/pages/projectsPage.java,1/5/154049ad02327298f8d8e5746ec4285c54f4f521
 t
 Dsrc/test/java/alphasights/apps/pistachio/tests/loginTests/login.java,4/b/4bfbfd39ce70516723a0e464a7ebd736ae13bdac
 p
