@@ -76,26 +76,32 @@ public class expertsPage extends clientPlatformBasePage{
             case "available":
                 $(statusAvailable).shouldBe(interactable);
                 statusAvailable.click();
+                System.out.println("User selected available status.");
                 break;
             case "requested":
                 $(statusRequested).shouldBe(interactable);
                 statusRequested.click();
+                System.out.println("User selected requested status.");
                 break;
             case "scheduled":
                 $(statusScheduled).shouldBe(interactable);
                 statusScheduled.click();
+                System.out.println("User selected scheduled status.");
                 break;
             case "completed":
                 $(statusCompleted).shouldBe(interactable);
                 statusCompleted.click();
+                System.out.println("User selected completed status.");
                 break;
             case "clear":
                 $(statusClear).shouldBe(interactable);
                 statusClear.click();
+                System.out.println("User selected clear status.");
                 break;
             case "save":
                 $(statusSave).shouldBe(interactable);
                 statusSave.click();
+                System.out.println("User selected save status.");
                 break;
         }
         return this;
@@ -106,6 +112,7 @@ public class expertsPage extends clientPlatformBasePage{
         SelenideElement desiredExpertname = expertNames.get(expertNum);
         $(desiredExpertname).shouldBe(enabled);
         desiredExpertname.click();
+        System.out.println("The desired expert:" + desiredExpertname.text() + " has been selected.");
         return this;
     }
 
