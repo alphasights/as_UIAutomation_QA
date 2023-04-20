@@ -29,13 +29,6 @@ public class expertsTests extends validLogins{
                 .clearExpertsSearch();
     }
 
-    @Test(groups = {"ClientPlatform", "Standard Login", "ExpertTests", "Interactions"}, dependsOnMethods = "alphasights.apps.clientPlatform.validLoginTests.pageTests.projectsTests.viewAProject")
-    public void viewInteraction()
-    {
-        ExpertPages
-                .clickExpertName(3);
-    }
-
     @Test(groups = {"ClientPlatform", "Standard Login", "ExpertTests", "SearchExperts"}, dataProvider = "searchQuery", dependsOnMethods = "alphasights.apps.clientPlatform.validLoginTests.pageTests.projectsTests.viewAProject")
     public void searchExpertQuery(String query)
     {
@@ -43,19 +36,35 @@ public class expertsTests extends validLogins{
                 .searchExperts(query);
     }
 
-    @Test(groups = {"ClientPlatform", "Standard Login", "ExpertTests" } , dataProvider = "statusName" ,dependsOnMethods = "alphasights.apps.clientPlatform.validLoginTests.pageTests.projectsTests.viewAProject")
+    @Test(groups = {"ClientPlatform", "Standard Login", "ExpertTests", "ExpertFilters" } , dataProvider = "statusName" ,dependsOnMethods = "alphasights.apps.clientPlatform.validLoginTests.pageTests.projectsTests.viewAProject")
     public void selectStatus(String statusNm)
     {
         ExpertPages
                 .clickStatusButton()
-                .selectStatusOption(statusNm);
+                .selectStatusOption(statusNm)
+                .selectStatusOption("save");
     }
 
-    @AfterMethod(groups = {})
+    @Test(groups = {"ClientPlatform", "Standard Login", "ExpertTests", "Interactions"}, dependsOnMethods = "alphasights.apps.clientPlatform.validLoginTests.pageTests.projectsTests.viewAProject")
+    public void viewInteraction()
+    {
+        ExpertPages
+                .clickExpertName(3);
+    }
+
+    @AfterMethod()
     public void refreshBrowser()
     {
         ExpertPages
                 .refreshBrowser();
+    }
+
+    @AfterGroups(groups = {"ExpertFilters" })
+    public void clearStatus()
+    {
+        ExpertPages
+                .clickStatusButton()
+                .selectStatusOption("clear");
     }
 
     public expertsTests() throws IOException, ParseException {

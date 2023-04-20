@@ -4,25 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3a9f36c8-cb73-4dac-9098-1c158688f90d" name="Changes" comment="Updates to the signInPage.java and signInHelpButtons.java to address the new modals and options.  Added more locators and methods to quickLaunchNewProj.java during automation tutorial.  A lot of other updates to page objects and tests across delivery and pistachio.">
-      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/pages/expertsPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/validLoginTests/baseValidLogin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/validLoginTests/pageTests/expertsTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/validLoginTests/pageTests/projectsTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/5/154049ad02327298f8d8e5746ec4285c54f4f521" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/a/4a66255e5ceba96331d28347ee672da2815c2513" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/3/73b0da900626dbb488b6eebbd41dcad3ae191b66" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/7/77966baa5f3876633679f322d1f16eaeba5fdf99" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+    <list default="true" id="3a9f36c8-cb73-4dac-9098-1c158688f90d" name="Changes" comment="Removed methods from baseInvalidLogin and baseValidLogin.  Created expertsPage and expertsTests.  Changed annotation on googleAuth setup.  Expanded projectsPage.  Expanded projectsTests.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/invalidLoginTests/baseInvalidLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/invalidLoginTests/baseInvalidLogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/invalidLoginTests/invalidLogins.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/invalidLoginTests/invalidLogins.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/pages/projectsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/pages/projectsPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/pages/signInPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/pages/signInPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/validLoginTests/pageTests/projects.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/validLoginTests/validLogins.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/validLoginTests/validLogins.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/tests/whiteboardAndProjects.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/delivery/tests/whiteboardAndProjects.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/utilities/googleAuth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/utilities/googleAuth.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/pages/expertsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/pages/expertsPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/validLoginTests/pageTests/expertsTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/alphasights/apps/clientPlatform/validLoginTests/pageTests/expertsTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,6 +133,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="expertsTests.clearStatus" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="as_UIAutomation_QA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="alphasights.apps.clientPlatform.validLoginTests.pageTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="alphasights.apps.clientPlatform.validLoginTests.pageTests" />
+      <option name="MAIN_CLASS_NAME" value="alphasights.apps.clientPlatform.validLoginTests.pageTests.expertsTests" />
+      <option name="METHOD_NAME" value="clearStatus" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="expertsTests.searchExpertQuery" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="as_UIAutomation_QA" />
       <extension name="coverage">
@@ -202,31 +205,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="projectsTests.viewAProject" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="as_UIAutomation_QA" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="alphasights.apps.clientPlatform.validLoginTests.pageTests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="alphasights.apps.clientPlatform.validLoginTests.pageTests" />
-      <option name="MAIN_CLASS_NAME" value="alphasights.apps.clientPlatform.validLoginTests.pageTests.projectsTests" />
-      <option name="METHOD_NAME" value="viewAProject" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.expertsTests" />
+        <item itemvalue="TestNG.expertsTests.clearStatus" />
         <item itemvalue="TestNG.expertsTests.selectStatus" />
         <item itemvalue="TestNG.expertsTests.searchExpertQuery" />
         <item itemvalue="TestNG.expertsTests.viewInteraction" />
-        <item itemvalue="TestNG.projectsTests.viewAProject" />
       </list>
     </recent_temporary>
   </component>
@@ -276,7 +261,7 @@
       <workItem from="1680269661523" duration="25112000" />
       <workItem from="1680611555566" duration="1208000" />
       <workItem from="1680701214014" duration="10577000" />
-      <workItem from="1681493050876" duration="37988000" />
+      <workItem from="1681493050876" duration="51320000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit and push">
       <created>1667401323964</created>
@@ -355,7 +340,21 @@
       <option name="project" value="LOCAL" />
       <updated>1681417853040</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Removed methods from baseInvalidLogin and baseValidLogin.  Created expertsPage and expertsTests.  Changed annotation on googleAuth setup.  Expanded projectsPage.  Expanded projectsTests.">
+      <created>1681852613145</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1681852613145</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Removed methods from baseInvalidLogin and baseValidLogin.  Created expertsPage and expertsTests.  Changed annotation on googleAuth setup.  Expanded projectsPage.  Expanded projectsTests.">
+      <created>1681852683759</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1681852683759</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -402,7 +401,8 @@
     <MESSAGE value="Updated details on multiple page objects.  Added screenshot images for Readme." />
     <MESSAGE value="changed image names for readme" />
     <MESSAGE value="Updates to the signInPage.java and signInHelpButtons.java to address the new modals and options.  Added more locators and methods to quickLaunchNewProj.java during automation tutorial.  A lot of other updates to page objects and tests across delivery and pistachio." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updates to the signInPage.java and signInHelpButtons.java to address the new modals and options.  Added more locators and methods to quickLaunchNewProj.java during automation tutorial.  A lot of other updates to page objects and tests across delivery and pistachio." />
+    <MESSAGE value="Removed methods from baseInvalidLogin and baseValidLogin.  Created expertsPage and expertsTests.  Changed annotation on googleAuth setup.  Expanded projectsPage.  Expanded projectsTests." />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed methods from baseInvalidLogin and baseValidLogin.  Created expertsPage and expertsTests.  Changed annotation on googleAuth setup.  Expanded projectsPage.  Expanded projectsTests." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
